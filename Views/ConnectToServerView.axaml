@@ -1,0 +1,195 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
+             xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:col="using:System.Collections"
+             xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
+             xmlns:local="clr-namespace:LoginScreenEMX.Views"
+             x:Class="LoginScreenEMX.Views.ConnectToServerView">
+
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+        <!-- 1. Заголовок-->
+        <Border Grid.Row="0"
+                Margin="0 0 0 16"
+                Height="32">
+            <Grid ColumnDefinitions="Auto, *,Auto">
+
+                <!-- Область для перетаскивания -->
+                <Border Grid.Column="0" Background="Transparent" Margin="0 0 6 0"
+                        VerticalAlignment="Center"
+                        PointerPressed="TitleBar_PointerPressed">
+                    <Path Data="{StaticResource AxxonIcon}"
+                          Width="24"
+                          Height="24"
+                          Stroke="Transparent"
+                          Fill="{StaticResource ForegroundColor}" />
+                </Border>
+                <Border Grid.Column="1" Background="Transparent" PointerPressed="TitleBar_PointerPressed">
+                    <TextBlock Text="Connect to server"
+                               VerticalAlignment="Center"
+                               Classes="ONE-H1-Medium" />
+                </Border>
+                <!-- Кнопки управления окном -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button Classes="Subtle IconOnlyLarge" Click="CloseButton_Click"
+                            VerticalAlignment="Center">
+                        <Path Data="{StaticResource CloseIcon}"
+                              Width="24"
+                              Height="24"
+                              Stroke="Transparent"
+                              Fill="{StaticResource ForegroundColor}" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!-- 2. Логотип Axxon ONE в svg -->
+        <Border Grid.Row="1" Margin="0 0 0 16">
+            <Svg Path="/Assets/logo.svg" Width="200" Height="105" />
+        </Border>
+        <!-- 3. Основной контент -->
+        <Border Grid.Row="2" Margin="0 0 0 16">
+            <Grid>
+                <!-- Фон для блока контента -->
+                <Border Classes="content-background" />
+                <!-- Функционал -->
+                <Grid RowDefinitions="Auto Auto Auto Auto Auto" Margin="16">
+                    <!-- Host/Node + tougle -->
+                    <Grid Grid.Row="0" ColumnDefinitions="*, auto" Margin="0  0  0  12">
+                        <!-- Блок Host -->
+                        <StackPanel x:Name="HostBlock" Spacing="4" IsVisible="True" Orientation="Vertical"
+                                    VerticalAlignment="Top">
+                            <TextBlock Text="Enter Server IP-address or hostname:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                            <mxe:ComboBoxEditor x:Name="HostsComboBox" Classes="Large"
+                                                SelectedItem="{x:Static local:HostsEnum.HostItem1}"
+                                                ItemsSource="{mx:EnumItemsSource 
+                                            EnumType=local:HostsEnum, ImageSize='20, 20',
+                                            ShowImages=True, ShowNames=True}">
+                            </mxe:ComboBoxEditor>
+                        </StackPanel>
+                        <!-- Блок Host -->
+                        <StackPanel x:Name="NodeBlock" IsVisible="False" Spacing="4" Orientation="Vertical"
+                                    VerticalAlignment="Top">
+                            <TextBlock Text="Enter the Node name:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                            <mxe:ComboBoxEditor x:Name="NodesComboBox" Classes="Large"
+                                                SelectedItem="{x:Static local:NodesEnum.NodeItem1}"
+                                                ItemsSource="{mx:EnumItemsSource 
+                                            EnumType=local:NodesEnum, ImageSize='20, 20',
+                                            ShowImages=True, ShowNames=True}">
+                            </mxe:ComboBoxEditor>
+                        </StackPanel>
+                        <!-- Переключалка Host/Node -->
+                        <ToggleButton Grid.Row="0" Grid.Column="1"
+                                      x:Name="SearchToggleButton"
+                                      Classes="IconOnlyLarge"
+                                      IsChecked="False"
+                                      Margin="6 0 0 0"
+                                      VerticalAlignment="Bottom"
+                                      Width="48"
+                                      Click="SearchButton_Click">
+                            <Viewbox Width="36" Height="24">
+                                <Grid>
+                                    <ProgressBar x:Name="SearchSpinner"
+                                                 IsIndeterminate="True"
+                                                 Width="36"
+                                                 Height="24"
+                                                 Foreground="{DynamicResource PrimaryColorTint20}"
+                                                 IsVisible="False" />
+                                    <Panel x:Name="IconsPanel">
+                                        <PathIcon Classes="nodeSearch-off"
+                                                  Foreground="{DynamicResource ForegroundColor}"
+                                                  Data="{DynamicResource NodeSearch}" />
+                                        <PathIcon Classes="nodeSearch-on"
+                                                  Data="{DynamicResource NodeSearch}"
+                                                  Foreground="{DynamicResource ForegroundColor}"
+                                                  IsVisible="False" />
+                                    </Panel>
+                                </Grid>
+                            </Viewbox>
+                        </ToggleButton>
+                    </Grid>
+                    <!-- Login -->
+                    <Grid Grid.Row="1" Margin="0  0  0  12">
+                        <StackPanel x:Name="LoginBlock" Spacing="4" Orientation="Vertical" VerticalAlignment="Top">
+                            <TextBlock Text="Login:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                            <mxe:TextEditor Name="UserName" Classes="Large"
+                                            HorizontalContentAlignment="Left" />
+                            <TextBlock Text="Your Account Username"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="2" Margin="0  0  0  12">
+                        <StackPanel x:Name="PasswordBlock" Spacing="4" Orientation="Vertical" VerticalAlignment="Top">
+                            <TextBlock Text="Password:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                            <!-- Password  с кнопкой переключения видимости пароля -->
+                            <!-- https://eremexcontrols.net/controls/editors/examples/How-to-create-a-password-text-box/ -->
+                            <mxe:TextEditor Classes="Large">
+                                <Interaction.Behaviors>
+                                    <local:PasswordBoxBehavior />
+                                </Interaction.Behaviors>
+                            </mxe:TextEditor>
+
+                            <TextBlock Text="Your Account Password"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="3" Margin="0  0  0  12" HorizontalAlignment="Left">
+                        <mxe:CheckEditor Content="Remember password" Classes="Large" IsChecked="True" />
+                    </Grid>
+                    <Grid Grid.Row="4" Margin="0  0  0  12" HorizontalAlignment="Left">
+                        <Button Classes="Empty" Click="ProxySettings_Click">
+                            <StackPanel x:Name="ProxySettings" Height="32" Orientation="Horizontal"
+                                        VerticalAlignment="Bottom">
+                                <mxe:HyperlinkEditor EditorValue="Proxy Settings" Classes="Large"
+                                                     CommandParameter="Proxy Settings" />
+
+                                <Path Data="{StaticResource HyperLinkIcon}"
+                                      Width="16"
+                                      Height="16"
+                                      Stroke="Transparent"
+                                      Margin="4 0 0 0"
+                                      Fill="{StaticResource PrimaryColorTint20}" />
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border Grid.Row="3">
+            <ContentControl x:Name="InfoContentControl">
+                <local:InfoBlockView HeaderText="Connections Tips:"
+                                        BodyText="Use server IP address or hostname, enter your username and password. Configure proxy settings if required." />
+            </ContentControl>
+        </Border>
+        <!-- 4. Нижние кнопки -->
+        <Border Grid.Row="4">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="8">
+                    <Button Classes="Primary Large" Click="ErrorConnection_Click">
+                        <Grid ColumnDefinitions="Auto,*" Height="32" VerticalAlignment="Center">
+                            <Path Data="{StaticResource ApplyIcon}"
+                                  Width="24"
+                                  Height="24"
+                                  Stroke="Transparent"
+                                  Fill="{StaticResource ForegroundColor}"
+                                  Margin="0 0 6 0 " />
+                            <TextBlock Grid.Column="1" Text="Connect" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
+                        </Grid>
+                    </Button>
+                    <Button Content="Cancel" Classes="Secondary Large" Click="CloseButton_Click" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+
+</UserControl>

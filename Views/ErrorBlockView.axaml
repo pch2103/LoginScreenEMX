@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginScreenEMX.Views"
+             x:Class="LoginScreenEMX.Views.ErrorBlockView">
+    
+    <Border Classes="error-block" Margin="0 0 0 16">
+        <Grid ColumnDefinitions="Auto, *">
+            <PathIcon Grid.Column="0" VerticalAlignment="Top" Margin="0 0 8 0" Data="{DynamicResource ErrorIcon}"
+                      Foreground="{DynamicResource RedColor}"
+                      Width="20"
+                      Height="20" />
+            <StackPanel Grid.Column="1">
+                <TextBlock TextWrapping="Wrap" Classes="ONE-Pararaph-Bold"
+                           Text="{Binding HeaderText, RelativeSource={RelativeSource AncestorType=local:ErrorBlockView}}" />
+                <TextBlock TextWrapping="Wrap" Classes="ONE-Pararaph-Regular"
+                           Text="{Binding BodyText, RelativeSource={RelativeSource AncestorType=local:ErrorBlockView}}" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

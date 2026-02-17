@@ -1,0 +1,26 @@
+<mx:MxWindow xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
+             xmlns:views="clr-namespace:LoginScreenEMX.Views"
+             x:Class="LoginScreenEMX.Views.MainWindow"
+             Width="450"
+             SizeToContent="Height"
+             SystemDecorations="None"
+             ShowMinimizeButton="False"
+             ShowMaximizeButton="False"
+             ShowCloseButton="False"
+             ShowCaptionSeparator="False"
+             Classes="no-titlebar">
+
+    <Grid>
+        <!-- Фон с размытием -->
+        <Border Classes="main-window-background" />
+        <!-- Основное содержимое поверх размытого фона -->
+        <Border Classes="content-overlay">
+            <ContentControl x:Name="MainContentControl">
+                <views:ConnectToServerView />
+            </ContentControl>
+        </Border>
+    </Grid>
+
+</mx:MxWindow>

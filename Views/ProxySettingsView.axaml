@@ -1,0 +1,87 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
+             xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
+             xmlns:local="clr-namespace:LoginScreenEMX.Views"
+             x:Class="LoginScreenEMX.Views.ProxySettingsView">
+   
+        <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
+<!-- 1. Заголовок-->
+        <Border Grid.Row="0"
+                Margin="0 0 0 16"
+                Height="32">
+            <Grid ColumnDefinitions="Auto, *,Auto">
+
+                <!-- Область для перетаскивания -->
+                <Border Grid.Column="0" Background="Transparent" Margin="0 0 6 0"
+                        VerticalAlignment="Center"
+                        PointerPressed="TitleBar_PointerPressed">
+                    <!-- Cтрелка возврата -->
+                    <StackPanel Orientation="Horizontal">
+                        <Button Classes="Subtle IconOnlyLarge" Cursor="Hand" Click="BackButton_Click"
+                                VerticalAlignment="Center">
+                            <Path Data="{StaticResource ArrowBackIcon}"
+                                  Width="24"
+                                  Height="24"
+                                  Stroke="Transparent"
+                                  Fill="{StaticResource ForegroundColor}" />
+                        </Button>
+                    </StackPanel>
+                </Border>
+                <Border Grid.Column="1" Background="Transparent" PointerPressed="TitleBar_PointerPressed">
+                    <TextBlock Text="Proxy settings"
+                               VerticalAlignment="Center"
+                               Classes="ONE-H1-Medium" />
+                </Border>
+                <!-- Кнопки управления окном -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button Classes="Subtle IconOnlyLarge" Click="CloseButton_Click"
+                            VerticalAlignment="Center">
+                        <Path Data="{StaticResource CloseIcon}"
+                              Width="24"
+                              Height="24"
+                              Stroke="Transparent"
+                              Fill="{StaticResource ForegroundColor}" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!-- 2. Логотип Axxon ONE в svg -->
+        <Border Grid.Row="1" Margin="0 0 0 16">
+            <Svg Path="/Assets/logo.svg" Width="200" Height="105" />
+        </Border>
+        <!-- 3. Основной контент -->
+        <Border Grid.Row="2" Margin="0 0 0 16">
+            <Grid>
+                <!-- Фон для блока контента -->
+                <Border Classes="content-background" />
+                <!-- Функционал -->
+                <Grid RowDefinitions="Auto Auto Auto Auto Auto" Margin="16">
+                
+                </Grid>
+            </Grid>
+        </Border>
+        <!-- 4. Нижние кнопки -->
+        <Border Grid.Row="4">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="8">
+                    <Button Classes="Primary Large">
+                        <Grid ColumnDefinitions="Auto,*" Height="32" VerticalAlignment="Center">
+                            <Path Data="{StaticResource ApplyIcon}"
+                                  Width="24"
+                                  Height="24"
+                                  Stroke="Transparent"
+                                  Fill="{StaticResource ForegroundColor}"
+                                  Margin="0 0 6 0 " />
+                            <TextBlock Grid.Column="1" Text="Connect" Classes="ONE-H3-Bold" VerticalAlignment="Center" />
+                        </Grid>
+                    </Button>
+                    <Button Content="Cancel" Classes="Secondary Large" Click="CloseButton_Click" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+
+</UserControl>

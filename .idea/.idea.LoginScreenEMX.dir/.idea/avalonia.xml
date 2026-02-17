@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="App.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="MyItemList.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Resources/ModifiedResources.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Resources/ModifiedResourcesColor.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Resources/ModifiedStyles.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Styles/ControlsCustomStyles.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Styles/CustomDarkTheme.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Styles/WindowStyles.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Views/ConnectToServerView.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Views/ErrorBlockView.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Views/InfoBlockView.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Views/MainWindow.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Views/ProxySettingsView.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Views/ProxySettngsView.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Views/SuccessBlockView.axaml" value="LoginScreenEMX.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
