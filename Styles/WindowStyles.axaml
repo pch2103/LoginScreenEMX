@@ -49,4 +49,11 @@
                 <Setter Property="Background" Value="{DynamicResource RedColor-40}" />
                 <Setter Property="Padding" Value="8" />
         </Style>
+        <Style Selector="Border.warning-block">
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="BorderBrush" Value="{DynamicResource OrangeColor}" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Background" Value="{DynamicResource OrangeColor-40}" />
+                <Setter Property="Padding" Value="8" />
+        </Style>
 </Styles>

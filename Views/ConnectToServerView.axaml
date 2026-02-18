@@ -11,8 +11,8 @@
     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto">
         <!-- 1. Заголовок-->
         <Border Grid.Row="0"
-                Margin="0 0 0 16"
-                Height="32">
+                Margin="{StaticResource ThemePaddingDown-Medium}"
+                Height="{StaticResource ThemeSize-Large}">
             <Grid ColumnDefinitions="Auto, *,Auto">
 
                 <!-- Область для перетаскивания -->
@@ -20,8 +20,8 @@
                         VerticalAlignment="Center"
                         PointerPressed="TitleBar_PointerPressed">
                     <Path Data="{StaticResource AxxonIcon}"
-                          Width="24"
-                          Height="24"
+                          Width="{StaticResource ThemeSize-Double}"
+                          Height="{StaticResource ThemeSize-Double}"
                           Stroke="Transparent"
                           Fill="{StaticResource ForegroundColor}" />
                 </Border>
@@ -35,8 +35,8 @@
                     <Button Classes="Subtle IconOnlyLarge" Click="CloseButton_Click"
                             VerticalAlignment="Center">
                         <Path Data="{StaticResource CloseIcon}"
-                              Width="24"
-                              Height="24"
+                              Width="{StaticResource ThemeSize-Double}"
+                              Height="{StaticResource ThemeSize-Double}"
                               Stroke="Transparent"
                               Fill="{StaticResource ForegroundColor}" />
                     </Button>
@@ -44,20 +44,20 @@
             </Grid>
         </Border>
         <!-- 2. Логотип Axxon ONE в svg -->
-        <Border Grid.Row="1" Margin="0 0 0 16">
+        <Border Grid.Row="1" Margin="{StaticResource ThemePaddingDown-Medium}">
             <Svg Path="/Assets/logo.svg" Width="200" Height="105" />
         </Border>
         <!-- 3. Основной контент -->
-        <Border Grid.Row="2" Margin="0 0 0 16">
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDown-Medium}">
             <Grid>
                 <!-- Фон для блока контента -->
                 <Border Classes="content-background" />
                 <!-- Функционал -->
-                <Grid RowDefinitions="Auto Auto Auto Auto Auto" Margin="16">
+                <Grid RowDefinitions="Auto Auto Auto Auto Auto" Margin="{StaticResource ThemePadding-Medium}">
                     <!-- Host/Node + tougle -->
-                    <Grid Grid.Row="0" ColumnDefinitions="*, auto" Margin="0  0  0  12">
+                    <Grid Grid.Row="0" ColumnDefinitions="*, auto" Margin="{StaticResource ThemePaddingDown-Medium}">
                         <!-- Блок Host -->
-                        <StackPanel x:Name="HostBlock" Spacing="4" IsVisible="True" Orientation="Vertical"
+                        <StackPanel x:Name="HostBlock" Spacing="{StaticResource ThemeSize-Min}" IsVisible="True" Orientation="Vertical"
                                     VerticalAlignment="Top">
                             <TextBlock Text="Enter Server IP-address or hostname:"
                                        VerticalAlignment="Center"
@@ -70,7 +70,7 @@
                             </mxe:ComboBoxEditor>
                         </StackPanel>
                         <!-- Блок Host -->
-                        <StackPanel x:Name="NodeBlock" IsVisible="False" Spacing="4" Orientation="Vertical"
+                        <StackPanel x:Name="NodeBlock" IsVisible="False" Spacing="{StaticResource ThemeSize-Min}" Orientation="Vertical"
                                     VerticalAlignment="Top">
                             <TextBlock Text="Enter the Node name:"
                                        VerticalAlignment="Center"
@@ -91,12 +91,12 @@
                                       VerticalAlignment="Bottom"
                                       Width="48"
                                       Click="SearchButton_Click">
-                            <Viewbox Width="36" Height="24">
+                            <Viewbox Width="36" Height="{StaticResource ThemeSize-Double}">
                                 <Grid>
                                     <ProgressBar x:Name="SearchSpinner"
                                                  IsIndeterminate="True"
                                                  Width="36"
-                                                 Height="24"
+                                                 Height="{StaticResource ThemeSize-Double}"
                                                  Foreground="{DynamicResource PrimaryColorTint20}"
                                                  IsVisible="False" />
                                     <Panel x:Name="IconsPanel">
@@ -113,8 +113,9 @@
                         </ToggleButton>
                     </Grid>
                     <!-- Login -->
-                    <Grid Grid.Row="1" Margin="0  0  0  12">
-                        <StackPanel x:Name="LoginBlock" Spacing="4" Orientation="Vertical" VerticalAlignment="Top">
+                    <Grid Grid.Row="1" Margin="{StaticResource ThemePaddingDown-Medium}">
+                        <StackPanel x:Name="LoginBlock" Spacing="{StaticResource ThemeSize-Min}" Orientation="Vertical" VerticalAlignment="Top">
+                            
                             <TextBlock Text="Login:"
                                        VerticalAlignment="Center"
                                        Classes="One-Subs-Regular" />
@@ -125,8 +126,8 @@
                                        Classes="One-Subs-Regular" />
                         </StackPanel>
                     </Grid>
-                    <Grid Grid.Row="2" Margin="0  0  0  12">
-                        <StackPanel x:Name="PasswordBlock" Spacing="4" Orientation="Vertical" VerticalAlignment="Top">
+                    <Grid Grid.Row="2" Margin="{StaticResource ThemePaddingDown-Medium}">
+                        <StackPanel x:Name="PasswordBlock" Spacing="{StaticResource ThemeSize-Min}" Orientation="Vertical" VerticalAlignment="Top">
                             <TextBlock Text="Password:"
                                        VerticalAlignment="Center"
                                        Classes="One-Subs-Regular" />
@@ -143,19 +144,19 @@
                                        Classes="One-Subs-Regular" />
                         </StackPanel>
                     </Grid>
-                    <Grid Grid.Row="3" Margin="0  0  0  12" HorizontalAlignment="Left">
+                    <Grid Grid.Row="3" Margin="{StaticResource ThemePaddingDown-Medium}" HorizontalAlignment="Left">
                         <mxe:CheckEditor Content="Remember password" Classes="Large" IsChecked="True" />
                     </Grid>
-                    <Grid Grid.Row="4" Margin="0  0  0  12" HorizontalAlignment="Left">
+                    <Grid Grid.Row="4" HorizontalAlignment="Left">
                         <Button Classes="Empty" Click="ProxySettings_Click">
-                            <StackPanel x:Name="ProxySettings" Height="32" Orientation="Horizontal"
+                            <StackPanel x:Name="ProxySettings" Height="{StaticResource ThemeSize-Large}" Orientation="Horizontal"
                                         VerticalAlignment="Bottom">
                                 <mxe:HyperlinkEditor EditorValue="Proxy Settings" Classes="Large"
                                                      CommandParameter="Proxy Settings" />
 
                                 <Path Data="{StaticResource HyperLinkIcon}"
-                                      Width="16"
-                                      Height="16"
+                                      Width="{StaticResource ThemeSize-Medium}"
+                                      Height="{StaticResource ThemeSize-Medium}"
                                       Stroke="Transparent"
                                       Margin="4 0 0 0"
                                       Fill="{StaticResource PrimaryColorTint20}" />
@@ -165,21 +166,22 @@
                 </Grid>
             </Grid>
         </Border>
+        <!-- 4. Инфоблок -->
         <Border Grid.Row="3">
             <ContentControl x:Name="InfoContentControl">
                 <local:InfoBlockView HeaderText="Connections Tips:"
-                                        BodyText="Use server IP address or hostname, enter your username and password. Configure proxy settings if required." />
+                                     BodyText="Message providing information to the user with actionable insights." />
             </ContentControl>
         </Border>
-        <!-- 4. Нижние кнопки -->
+        <!-- 5. Нижние кнопки -->
         <Border Grid.Row="4">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="8">
                     <Button Classes="Primary Large" Click="ErrorConnection_Click">
-                        <Grid ColumnDefinitions="Auto,*" Height="32" VerticalAlignment="Center">
+                        <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}" VerticalAlignment="Center">
                             <Path Data="{StaticResource ApplyIcon}"
-                                  Width="24"
-                                  Height="24"
+                                  Width="{StaticResource ThemeSize-Double}"
+                                  Height="{StaticResource ThemeSize-Double}"
                                   Stroke="Transparent"
                                   Fill="{StaticResource ForegroundColor}"
                                   Margin="0 0 6 0 " />

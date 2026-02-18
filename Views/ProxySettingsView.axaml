@@ -6,12 +6,12 @@
              xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
              xmlns:local="clr-namespace:LoginScreenEMX.Views"
              x:Class="LoginScreenEMX.Views.ProxySettingsView">
-   
-        <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
-<!-- 1. Заголовок-->
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
+        <!-- 1. Заголовок-->
         <Border Grid.Row="0"
-                Margin="0 0 0 16"
-                Height="32">
+                Margin="{StaticResource ThemePaddingDown-Medium}"
+                Height="{StaticResource ThemeSize-Large}">
             <Grid ColumnDefinitions="Auto, *,Auto">
 
                 <!-- Область для перетаскивания -->
@@ -23,8 +23,8 @@
                         <Button Classes="Subtle IconOnlyLarge" Cursor="Hand" Click="BackButton_Click"
                                 VerticalAlignment="Center">
                             <Path Data="{StaticResource ArrowBackIcon}"
-                                  Width="24"
-                                  Height="24"
+                                  Width="{StaticResource ThemeSize-Double}"
+                                  Height="{StaticResource ThemeSize-Double}"
                                   Stroke="Transparent"
                                   Fill="{StaticResource ForegroundColor}" />
                         </Button>
@@ -40,8 +40,8 @@
                     <Button Classes="Subtle IconOnlyLarge" Click="CloseButton_Click"
                             VerticalAlignment="Center">
                         <Path Data="{StaticResource CloseIcon}"
-                              Width="24"
-                              Height="24"
+                              Width="{StaticResource ThemeSize-Double}"
+                              Height="{StaticResource ThemeSize-Double}"
                               Stroke="Transparent"
                               Fill="{StaticResource ForegroundColor}" />
                     </Button>
@@ -49,29 +49,110 @@
             </Grid>
         </Border>
         <!-- 2. Логотип Axxon ONE в svg -->
-        <Border Grid.Row="1" Margin="0 0 0 16">
+        <Border Grid.Row="1" Margin="{StaticResource ThemePaddingDown-Medium}">
             <Svg Path="/Assets/logo.svg" Width="200" Height="105" />
         </Border>
         <!-- 3. Основной контент -->
-        <Border Grid.Row="2" Margin="0 0 0 16">
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDown-Medium}">
             <Grid>
                 <!-- Фон для блока контента -->
                 <Border Classes="content-background" />
                 <!-- Функционал -->
-                <Grid RowDefinitions="Auto Auto Auto Auto Auto" Margin="16">
-                
+                <Grid RowDefinitions="Auto Auto Auto Auto Auto Auto" Margin="{StaticResource ThemePadding-Medium}">
+                    <StackPanel  Spacing="{StaticResource ThemeSize-Min}" Orientation="Vertical"
+                                VerticalAlignment="Top">
+                        <TextBlock Text="Proxy mode:"
+                                   VerticalAlignment="Center"
+                                   Classes="One-Subs-Regular" />
+                        <StackPanel Spacing="{StaticResource ThemeSize-Min}"
+                                    Margin="{StaticResource ThemePaddingDown-Regular}">
+                            <RadioButton Content="Without proxy" Classes="Large" IsChecked="True"
+                                         GroupName="Proxy mode" />
+                            <RadioButton Content="HTTP/HTTPS proxy" Classes="Large" GroupName="Proxy mode" />
+                            <RadioButton Content="Proxying through supervisor" Classes="Large" GroupName="Proxy mode" />
+                        </StackPanel>
+                    </StackPanel>
+                    <Grid Grid.Row="1"  
+                          ColumnDefinitions="*,Auto" ColumnSpacing="{StaticResource ThemeSize-Half}"
+                          Margin="{StaticResource ThemePaddingDown-Medium}">
+                        <StackPanel Grid.Column="0" Spacing="{StaticResource ThemeSize-Min}" Orientation="Vertical">
+                            <TextBlock Text="Proxy Address:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                            <mxe:TextEditor Name="ProxyAddress" Classes="Large"
+                                            HorizontalContentAlignment="Left" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Spacing="{StaticResource ThemeSize-Min}" Orientation="Vertical">
+                            <TextBlock Text="Port:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                            <mxe:SpinEditor Classes="Large" x:Name="SpinEditor" Width="96" 
+                                            Value="80"
+                                            Minimum="0"
+                                            Increment="1"
+                            />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="2" Margin="{StaticResource ThemePaddingDown-Medium}" HorizontalAlignment="Left">
+                        <mxe:CheckEditor x:Name="ProxyAuthCheckBox" Content="Proxy authentication" Classes="Large" IsChecked="True" />
+                    </Grid>
+                                        <!-- Login -->
+                    <Grid Grid.Row="3" Margin="{StaticResource ThemePaddingDown-Medium}">
+                        <StackPanel x:Name="LoginBlock" 
+                                    IsEnabled="{Binding #ProxyAuthCheckBox.IsChecked}"
+                                    Spacing="{StaticResource ThemeSize-Min}" Orientation="Vertical" VerticalAlignment="Top">
+                            
+                            <TextBlock Text="Login:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" 
+                                       />
+                            <mxe:TextEditor Name="UserName" Classes="Large"
+                                            HorizontalContentAlignment="Left" />
+                            <TextBlock Text="Proxy login"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <StackPanel x:Name="PasswordBlock" 
+                                    IsEnabled="{Binding #ProxyAuthCheckBox.IsChecked}"
+                                    Spacing="{StaticResource ThemeSize-Min}" Orientation="Vertical" VerticalAlignment="Top">
+                            <TextBlock Text="Password:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                            <!-- Password  с кнопкой переключения видимости пароля -->
+                            <!-- https://eremexcontrols.net/controls/editors/examples/How-to-create-a-password-text-box/ -->
+                            <mxe:TextEditor Classes="Large">
+                                <Interaction.Behaviors>
+                                    <local:PasswordBoxBehavior />
+                                </Interaction.Behaviors>
+                            </mxe:TextEditor>
+
+                            <TextBlock Text="Proxy password"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                        </StackPanel>
+                    </Grid>
                 </Grid>
             </Grid>
         </Border>
-        <!-- 4. Нижние кнопки -->
+        <!-- 4. Инфоблок -->
+        <Border Grid.Row="3">
+            <ContentControl x:Name="InfoContentControl">
+                <local:InfoBlockView HeaderText="Connections Tips:"
+                                     BodyText="Message providing information to the user with actionable insights." />
+            </ContentControl>
+        </Border>
+        <!-- 5. Нижние кнопки -->
         <Border Grid.Row="4">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="8">
-                    <Button Classes="Primary Large">
-                        <Grid ColumnDefinitions="Auto,*" Height="32" VerticalAlignment="Center">
+                    <Button Classes="Primary Large" Click="WarningConnection_Click">
+                        <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}"
+                              VerticalAlignment="Center">
                             <Path Data="{StaticResource ApplyIcon}"
-                                  Width="24"
-                                  Height="24"
+                                  Width="{StaticResource ThemeSize-Double}"
+                                  Height="{StaticResource ThemeSize-Double}"
                                   Stroke="Transparent"
                                   Fill="{StaticResource ForegroundColor}"
                                   Margin="0 0 6 0 " />
@@ -83,5 +164,4 @@
             </Grid>
         </Border>
     </Grid>
-
 </UserControl>

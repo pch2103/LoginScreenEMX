@@ -3,19 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:LoginScreenEMX.Views"
-             x:Class="LoginScreenEMX.Views.InfoBlockView">
+             x:Class="LoginScreenEMX.Views.WarningBlockView">
     
-    <Border Classes="info-block" Margin="{DynamicResource ThemePaddingDown-Medium}">
+    <Border Classes="warning-block" Margin="{DynamicResource ThemePaddingDown-Medium}">
         <Grid ColumnDefinitions="Auto, *">
-            <PathIcon Grid.Column="0" VerticalAlignment="Top" Margin="0 0 8 0" Data="{DynamicResource InfoIcon}"
-                      Foreground="{DynamicResource PrimaryColorTint20}"
+            <PathIcon Grid.Column="0" VerticalAlignment="Top" Margin="0 0 8 0" Data="{DynamicResource WarningIcon}"
+                      Foreground="{DynamicResource OrangeColor}"
                       Width="20"
                       Height="20" />
             <StackPanel Grid.Column="1">
                 <TextBlock TextWrapping="Wrap" Classes="ONE-Pararaph-Bold"
-                           Text="{Binding HeaderText, RelativeSource={RelativeSource AncestorType=local:InfoBlockView}}" />
+                           Text="{Binding HeaderText, RelativeSource={RelativeSource AncestorType=local:WarningBlockView}}" />
                 <TextBlock TextWrapping="Wrap" Classes="ONE-Pararaph-Regular"
-                           Text="{Binding BodyText, RelativeSource={RelativeSource AncestorType=local:InfoBlockView}}" />
+                           Text="{Binding BodyText, RelativeSource={RelativeSource AncestorType=local:WarningBlockView}}" />
             </StackPanel>
         </Grid>
     </Border>

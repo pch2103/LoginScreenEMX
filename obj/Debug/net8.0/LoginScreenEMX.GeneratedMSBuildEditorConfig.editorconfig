@@ -54,3 +54,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/CheP/RiderProjects/LoginScreenEMX/Views/SuccessBlockView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/CheP/RiderProjects/LoginScreenEMX/Views/WarningBlockView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

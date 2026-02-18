@@ -7,10 +7,13 @@
         xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
         xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors">
 
-
+    <Style Selector="TextBlock:disabled">
+        <Setter Property="Foreground" Value="{DynamicResource BackgroundColor-500}" />
+    </Style>
+    
     <!-- mxe|TextEditor, mxe|ComboBoxEditor -->
-    <Style Selector="mxe|TextEditor.Medium, mxe|ComboBoxEditor.Medium">
-        <Setter Property="Height" Value="24" />
+    <Style Selector="mxe|TextEditor.Medium, mxe|ComboBoxEditor.Medium, mxe|SpinEditor.Medium">
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
         <Setter Property="CornerRadius" Value="2" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="11" />
@@ -21,13 +24,13 @@
         </Style.Resources>
     </Style>
 
-    <Style Selector="mxe|TextEditor.Large, mxe|ComboBoxEditor.Large">
-        <Setter Property="Height" Value="32" />
+    <Style Selector="mxe|TextEditor.Large, mxe|ComboBoxEditor.Large, mxe|SpinEditor.Large">
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
         <!-- Центровк текста в контролах по вертикали - подобрать -->
         <Setter Property="Padding" Value="8, 0, 8, 2" />
         <Setter Property="CornerRadius" Value="2" />
         <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
         <!-- https://github.com/Eremex/controlthemes/blob/main/Source/Eremex.Avalonia.Themes.DeltaDesign/Controls/ControlsResources.axaml -->
         <Style.Resources>
             <!-- размер текста в выпадайке -->
@@ -48,28 +51,38 @@
     </Style>
 
     <!-- mxe:CheckEditor  -->
-    <Style Selector="mxe|CheckEditor.Large">
+    <Style Selector="mxe|CheckEditor.Large, CheckBox.Large">
         <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="Height" Value="32" />
-        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
     </Style>
-    <Style Selector="mxe|CheckEditor.Medium">
+    
+    <Style Selector="mxe|CheckEditor.Medium, CheckBox.Medium">
         <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="Height" Value="24" />
         <Setter Property="FontSize" Value="11" />
     </Style>
     
     <!-- mxe:HyperlinkEditor  -->
     <Style Selector="mxe|HyperlinkEditor.Large">
         <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Padding" Value="0" />
     </Style>
     
+    <!--  RadioButton -->
+    <Style Selector="RadioButton.Large">
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}"/>
+    </Style>
+    
+    <Style Selector="RadioButton.Medium">
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="11"/>
+    </Style>
+    
     <Style Selector="mxe|HyperlinkEditor.Medium">
         <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="Height" Value="24" />
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
         <Setter Property="FontSize" Value="11" />
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
@@ -82,23 +95,24 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
     </Style>
+    
     <Style Selector="Button.Empty:pointerover /template/ Border#PART_BackgroundBorder">
         <Setter Property="Background" Value="{StaticResource TransparentColor}" />
     </Style>
-
+    
     <!-- Button -->
     <Style Selector="Button.IconOnlyLarge, ToggleButton.IconOnlyLarge">
-        <Setter Property="Width" Value="32" />
-        <Setter Property="Height" Value="32" />
+        <Setter Property="Width" Value="{StaticResource ThemeSize-Large}" />
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
         <Setter Property="CornerRadius" Value="2" />
     </Style>
     <Style Selector="Button.IconOnlyMedium, ToggleButton.IconOnlyMedium">
-        <Setter Property="Width" Value="24" />
-        <Setter Property="Height" Value="24" />
+        <Setter Property="Width" Value="{StaticResource ThemeSize-Double}" />
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
         <Setter Property="CornerRadius" Value="2" />
     </Style>
     <Style Selector="Button.Medium">
-        <Setter Property="Height" Value="24" />
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
         <Setter Property="CornerRadius" Value="2" />
         <Setter Property="Foreground" Value="{StaticResource ForegroundColor}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
@@ -106,7 +120,7 @@
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
     <Style Selector="Button.Large">
-        <Setter Property="Height" Value="32" />
+        <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
         <Setter Property="CornerRadius" Value="3" />
         <Setter Property="Foreground" Value="{StaticResource ForegroundColor}" />
         <Setter Property="FontFamily" Value="DefaultFont" />

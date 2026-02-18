@@ -193,3 +193,4 @@ C:\Users\CheP\RiderProjects\LoginScreenEMX\bin\Debug\net8.0\Avalonia.Xaml.Intera
 C:\Users\CheP\RiderProjects\LoginScreenEMX\bin\Debug\net8.0\Avalonia.Xaml.Interactions.Events.dll
 C:\Users\CheP\RiderProjects\LoginScreenEMX\bin\Debug\net8.0\Avalonia.Xaml.Interactions.Responsive.dll
 C:\Users\CheP\RiderProjects\LoginScreenEMX\bin\Debug\net8.0\Avalonia.Xaml.Interactivity.dll
+C:\Users\CheP\RiderProjects\LoginScreenEMX\obj\Debug\net8.0\LoginScreenEMX.sourcelink.json
