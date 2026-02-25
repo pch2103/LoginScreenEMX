@@ -3,8 +3,7 @@
              xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
              xmlns:views="clr-namespace:LoginScreenEMX.Views"
              x:Class="LoginScreenEMX.Views.MainWindow"
-             Width="450"
-             SizeToContent="Height"
+             SizeToContent="WidthAndHeight"
              SystemDecorations="None"
              ShowMinimizeButton="False"
              ShowMaximizeButton="False"
@@ -18,7 +17,12 @@
         <!-- Основное содержимое поверх размытого фона -->
         <Border Classes="content-overlay">
             <ContentControl x:Name="MainContentControl">
-                <views:ConnectToServerView />
+                <!-- Connect To Server -->
+                <!--<views:ConnectToServerView />-->
+                
+                <!-- Activation Utility -->
+                <views:ActivationUtilityView />
+                
             </ContentControl>
         </Border>
     </Grid>

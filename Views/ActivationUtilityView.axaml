@@ -1,0 +1,114 @@
+<!-- Activation Utility -->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
+             xmlns:views="clr-namespace:LoginScreenEMX.Views"
+             x:DataType="views:ActivationUtilityView"
+             xmlns:local="clr-namespace:LoginScreenEMX.Views"
+             Width="600"
+             Height="400"
+             x:Class="LoginScreenEMX.Views.ActivationUtilityView">
+    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
+        <!-- 1. Заголовок-->
+        <Border Grid.Row="0"
+                Margin="{StaticResource ThemePaddingDown-Medium}"
+                Height="{StaticResource ThemeSize-Large}">
+            <Grid ColumnDefinitions="Auto, *,Auto">
+                <!-- Область для перетаскивания -->
+                <Border Grid.Column="0" Background="Transparent" Margin="0 0 6 0"
+                        VerticalAlignment="Center"
+                        PointerPressed="TitleBar_PointerPressed">
+                    <Path Data="{StaticResource ActivationIcon}"
+                          Width="{StaticResource ThemeSize-Double}"
+                          Height="{StaticResource ThemeSize-Double}"
+                          Stroke="Transparent"
+                          Fill="{StaticResource ForegroundColor}" />
+                </Border>
+                <Border Grid.Column="1" Background="Transparent" PointerPressed="TitleBar_PointerPressed">
+                    <TextBlock Text="Activation Utility"
+                               VerticalAlignment="Center"
+                               Classes="ONE-H2-Medium" />
+                </Border>
+                <!-- Кнопки управления окном -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button Classes="Subtle IconOnlyLarge" Click="CloseButton_Click"
+                            VerticalAlignment="Center">
+                        <Path Data="{StaticResource CloseIcon}"
+                              Width="{StaticResource ThemeSize-Double}"
+                              Height="{StaticResource ThemeSize-Double}"
+                              Stroke="Transparent"
+                              Fill="{StaticResource ForegroundColor}" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!-- 2. Логотип Axxon ONE в svg -->
+        <Border Grid.Row="1" Margin="{StaticResource ThemePaddingDown-Medium}">
+            <Svg Path="/Assets/one-logo-h.svg" Width="320" Height="68" />
+        </Border>
+        <!-- 3. Контент -->
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDown-Medium}">
+            <Grid>
+                <!-- Фон для блока контента -->
+                <Border Classes="content-background" />
+                <!-- Функционал -->
+                <Grid ColumnDefinitions="Auto *" Margin="{StaticResource ThemePadding-Medium}">
+                    <Grid Grid.Column="0" VerticalAlignment="Top">
+                        <Path Data="{StaticResource WarningIcon}"
+                              Width="{StaticResource ThemeSize-Large}"
+                              Height="{StaticResource ThemeSize-Large}"
+                              Stretch="Uniform"
+                              Stroke="Transparent"
+                              Fill="{StaticResource OrangeColor}" />
+                    </Grid>
+                    <Grid Grid.Column="1" Margin="12 6 0 0 " RowDefinitions="Auto Auto Auto" VerticalAlignment="Top" >
+                        <TextBlock Text="Attention!"
+                                   Foreground="{StaticResource OrangeColor}"
+                                   VerticalAlignment="Top"
+                                   Margin="{StaticResource ThemePaddingDown-Half}"
+                                   Classes="ONE-H2-Bold" />
+                        <TextBlock Grid.Row="1" Text="The demo version expires 30 days after the first installation. System activity period: 08:00 - 18:00. Other limitations are described in the Help section. To remove them, you must activate the free Axxon Next Free Version license or purchase an Axxon Next license."
+                                   TextWrapping="Wrap"
+                                   VerticalAlignment="Top"
+                                   Margin="{StaticResource ThemePaddingDown-Half}"
+                                   Classes="ONE-H3-Regular" />
+                        <Grid Grid.Row="2" >
+                            <!-- Табличка с лицензией-->
+                            <mxdg:DataGridControl ItemsSource="{Binding LicenseItems}" 
+                                                  ShowGroupPanel="False"
+                                                  ShowHorizontalLines="True"
+                                                  Classes="Large">
+                                <mxdg:DataGridControl.Columns>
+                                    <mxdg:GridColumn FieldName="Server" Header="Server" Width="*" />
+                                    <mxdg:GridColumn FieldName="License" Header="License" Width="*" />
+                                </mxdg:DataGridControl.Columns>
+                            </mxdg:DataGridControl>
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+        <!-- 5. Нижние кнопки -->
+        <Border Grid.Row="4">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="8">
+                    <Button Classes="Primary Large">
+                        <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}"
+                              VerticalAlignment="Center">
+                            <Path Data="{StaticResource ApplyIcon}"
+                                  Width="{StaticResource ThemeSize-Double}"
+                                  Height="{StaticResource ThemeSize-Double}"
+                                  Stroke="Transparent"
+                                  Fill="{StaticResource ForegroundColor}"
+                                  Margin="0 0 6 0 " />
+                            <TextBlock Grid.Column="1" Text="Run activation utility" Classes="ONE-H3-Bold"
+                                       VerticalAlignment="Center" />
+                        </Grid>
+                    </Button>
+                    <Button Content="Continue" Classes="Secondary Large" Click="CloseButton_Click" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

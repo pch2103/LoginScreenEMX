@@ -1,11 +1,10 @@
+<!-- Connect to server -->
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
              xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             xmlns:col="using:System.Collections"
-             xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
              xmlns:local="clr-namespace:LoginScreenEMX.Views"
+             Width="400"
              x:Class="LoginScreenEMX.Views.ConnectToServerView">
 
     <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto">

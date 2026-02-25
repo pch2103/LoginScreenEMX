@@ -2,63 +2,73 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:mxe="clr-namespace:Eremex.AvaloniaUI.Controls.Editors;assembly=Eremex.Avalonia.Controls"
                     xmlns:mxev="https://schemas.eremexcontrols.net/avalonia/editors"
-                    >
+                    xmlns:mxdg="clr-namespace:Eremex.AvaloniaUI.Controls.DataGrid;assembly=Eremex.Avalonia.Controls"
+                    xmlns:mxdcv="clr-namespace:Eremex.AvaloniaUI.Controls.DataControl.Visuals;assembly=Eremex.Avalonia.Controls"
+                    xmlns:mx="https://schemas.eremexcontrols.net/avalonia">
 
 
     <ResourceDictionary.ThemeDictionaries>
 
         <!-- https://github.com/Eremex/controlthemes/blob/main/Source/Eremex.Avalonia.Themes.DeltaDesign/Variants/CustomizedBrushes.axaml -->
-        
+
         <!-- Override resources for the Default theme variant -->
         <ResourceDictionary x:Key="Default">
             <CornerRadius x:Key="PopupCornerRadius">2</CornerRadius>
             <CornerRadius x:Key="EditorCornerRadius">2</CornerRadius>
 
-            <SolidColorBrush x:Key="TransparentBrush" Color="Transparent"/>
+            <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
+
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Strong"
+                             Color="{StaticResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Medium"
+                             Color="{StaticResource ThemeBackgroundColor-500}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Light"
+                             Color="{StaticResource ThemeBackgroundColor-400}" />
+            <SolidColorBrush x:Key="Icons/Outline/Gray" Color="{StaticResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Icons/Outline/Disabled" Color="{StaticResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Disabled"
+                             Color="{StaticResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Text/Neutral/Primary" Color="{StaticResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Text/Neutral/Tertiary" Color="{StaticResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Text" Color="{StaticResource ThemePrimaryColorShade20}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Hover" Color="{StaticResource ThemeBackgroundColor-500}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled" Color="{StaticResource ThemeBackgroundColor-700}" />
+            <SolidColorBrush x:Key="Outline/Accent/Focus" Color="{StaticResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Enabled" Color="{StaticResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Hover" Color="{StaticResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Enabled"
+                             Color="{StaticResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Hover" Color="{StaticResource ThemePrimaryColor}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Pressed"
+                             Color="{StaticResource ThemePrimaryColorShade10}" />
+            <SolidColorBrush x:Key="Text/Neutral/Disabled" Color="{StaticResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Text/Neutral/Secondary" Color="{StaticResource ThemeForegroundColor}" />
+            <SolidColorBrush x:Key="Text/Accent/Primary" Color="{StaticResource ThemeWhite}" />
+            <SolidColorBrush x:Key="Text/On Accent/Primary" Color="{StaticResource ThemeWhite}" />
+            <SolidColorBrush x:Key="Icons/Outline/Selected" Color="{StaticResource ThemeWhite}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Pressed" Color="{StaticResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Disabled" Color="{StaticResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Enabled" Color="{StaticResource ThemePrimaryColor}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Hover" Color="{StaticResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Pressed" Color="{StaticResource ThemePrimaryColorShade20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Primary/Disabled" Color="{StaticResource ThemeBackgroundColor-700}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Pressed" Color="{StaticResource ThemePrimaryColorShade20}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Primary/Disabled" Color="{StaticResource ThemeBackgroundColor-900}" />
+
+            <SolidColorBrush x:Key="Text/Accent/Error" Color="{StaticResource ThemeRed}" />
+            <SolidColorBrush x:Key=" Outline/Accent/Error" Color="{StaticResource ThemeRed}" />
             
-            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Strong" Color="{StaticResource ThemeBackgroundColor-500}"/>
-            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Medium" Color="{StaticResource ThemeBackgroundColor-400}"/>
-            <SolidColorBrush x:Key="Icons/Outline/Gray" Color="{StaticResource ThemeForegroundColor}"/>
-            <SolidColorBrush x:Key="Icons/Outline/Disabled" Color="{StaticResource ThemeBackgroundColor-600}"/>
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Disabled" Color="{StaticResource ThemeBackgroundColor-900}"/>
-            <SolidColorBrush x:Key="Text/Neutral/Primary" Color="{StaticResource ThemeForegroundColor}"/>
-            <SolidColorBrush x:Key="Text/Neutral/Tertiary" Color="{StaticResource ThemeForegroundColor}"/>
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Text" Color="{StaticResource ThemePrimaryColorShade20}"/>
-            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Hover" Color="{StaticResource ThemeBackgroundColor-500}"/>
-            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled" Color="{StaticResource ThemeBackgroundColor-700}"/>
-            <SolidColorBrush x:Key="Outline/Accent/Focus" Color="{StaticResource ThemePrimaryColorTint20}"/>
-            <SolidColorBrush x:Key="Fill/Neutral/Primary/Enabled" Color="{StaticResource ThemeBackgroundColor-900}"/>
-            <SolidColorBrush x:Key="Fill/Neutral/Primary/Hover" Color="{StaticResource ThemePrimaryColorTint20}"/>
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Enabled" Color="{StaticResource ThemePrimaryColorTint20}"/>
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Hover" Color="{StaticResource ThemePrimaryColor}"/>
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Pressed" Color="{StaticResource ThemePrimaryColorShade10}"/>
-            <SolidColorBrush x:Key="Text/Neutral/Disabled" Color="{StaticResource ThemeBackgroundColor-600}"/>
-            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Light" Color="{StaticResource ThemeBackgroundColor-500}"/>
-            <SolidColorBrush x:Key="Text/Neutral/Secondary" Color="{StaticResource ThemeForegroundColor}"/>
-            <SolidColorBrush x:Key="Text/Accent/Primary" Color="{StaticResource ThemeWhite}"/>
-            <SolidColorBrush x:Key="Text/On Accent/Primary" Color="{StaticResource ThemeWhite}"/>
-            <SolidColorBrush x:Key="Icons/Outline/Selected" Color="{StaticResource ThemeWhite}"/>
-            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Pressed" Color="{StaticResource ThemeBackgroundColor-900}"/>
-            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Disabled" Color="{StaticResource ThemeBackgroundColor-900}"/>
-            <SolidColorBrush x:Key="Fill/Accent/Primary/Enabled" Color="{StaticResource ThemePrimaryColor}"/>
-            <SolidColorBrush x:Key="Fill/Accent/Primary/Hover" Color="{StaticResource ThemePrimaryColorTint20}"/>
-            <SolidColorBrush x:Key="Fill/Accent/Primary/Pressed" Color="{StaticResource ThemePrimaryColorShade20}"/>
-            <SolidColorBrush x:Key="Fill/Accent/Primary/Disabled" Color="{StaticResource ThemeBackgroundColor-700}"/>
-            <SolidColorBrush x:Key="Fill/Neutral/Primary/Pressed" Color="{StaticResource ThemePrimaryColorShade20}"/>
-            <SolidColorBrush x:Key="Fill/Neutral/Primary/Disabled" Color="{StaticResource ThemeBackgroundColor-900}"/>
-            
-            <SolidColorBrush x:Key="Text/Accent/Error" Color="{StaticResource ThemeRed}"/>
-            <SolidColorBrush x:Key=" Outline/Accent/Error" Color="{StaticResource ThemeRed}"/>
-       </ResourceDictionary>
+
+        </ResourceDictionary>
 
 
         <!-- Override resources for the Dark theme variant -->
         <ResourceDictionary x:Key="Dark">
         </ResourceDictionary>
-        
+
         <!-- Override resources for the Light theme variant -->
         <ResourceDictionary x:Key="Light">
         </ResourceDictionary>
-        
-    </ResourceDictionary.ThemeDictionaries>   
+
+    </ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>

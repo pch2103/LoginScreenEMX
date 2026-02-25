@@ -1,9 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
-        xmlns:sys="using:System"
-        xmlns:col="using:System.Collections"
-        xmlns:local="clr-namespace:LoginScreenEMX.Views"
+        xmlns:mxdg="https://schemas.eremexcontrols.net/avalonia/datagrid"
         xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
         xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors">
 
@@ -23,7 +20,13 @@
             <x:Double x:Key="ControlContentThemeFontSize">11</x:Double>
         </Style.Resources>
     </Style>
-
+    
+    <Style Selector="mxdg|DataGridControl.Large">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    
+    
     <Style Selector="mxe|TextEditor.Large, mxe|ComboBoxEditor.Large, mxe|SpinEditor.Large">
         <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
         <!-- Центровк текста в контролах по вертикали - подобрать -->

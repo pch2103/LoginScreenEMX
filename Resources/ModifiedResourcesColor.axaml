@@ -136,19 +136,19 @@
     <!-- Resources for CheckBox.axaml -->
     
     <StaticResource x:Key="CheckBoxForeground" ResourceKey="Text/Neutral/Primary" />
-    <StaticResource x:Key="CheckBoxRectBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
+    <StaticResource x:Key="CheckBoxRectBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="CheckBoxRectBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="CheckBoxStroke" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="CheckBoxSecondaryRectBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="CheckBoxWarningRectBorderBrush" ResourceKey="Outline/Accent/Error" />
     <StaticResource x:Key="CheckBoxForegroundPointerOver" ResourceKey="Text/Neutral/Primary" />
-    <StaticResource x:Key="CheckBoxRectBorderBrushPointerOver" ResourceKey="Outline/Neutral/Transparent/Medium" />
+    <StaticResource x:Key="CheckBoxRectBorderBrushPointerOver" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="CheckBoxRectBackgroundPointerOver" ResourceKey="Fill/Neutral/Secondary/Hover" />
     <StaticResource x:Key="CheckBoxStrokePointerOver" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="CheckBoxSecondaryRectBackgroundPointerOver" ResourceKey="Fill/Neutral/Primary/Hover" />
     <StaticResource x:Key="CheckBoxWarningRectBorderBrushPointerOver" ResourceKey="Outline/Accent/Error" />  
     <StaticResource x:Key="CheckBoxForegroundPressed" ResourceKey="Text/Neutral/Primary" />
-    <StaticResource x:Key="CheckBoxRectBorderBrushPressed" ResourceKey="Outline/Neutral/Transparent/Medium" />
+    <StaticResource x:Key="CheckBoxRectBorderBrushPressed" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="CheckBoxRectBackgroundPressed" ResourceKey="Fill/Neutral/Secondary/Pressed" />
     <StaticResource x:Key="CheckBoxStrokePressed" ResourceKey="Icons/Outline/Disabled" />
     <StaticResource x:Key="CheckBoxSecondaryRectBackgroundPressed" ResourceKey="Fill/Neutral/Primary/Pressed" />
@@ -336,20 +336,20 @@
     <StaticResource x:Key="RadioButtonForeground" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="RadioButtonForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
     <StaticResource x:Key="RadioButtonFocusBorderBrush" ResourceKey="Outline/Accent/Focus" />
-    <StaticResource x:Key="RadioButtonOuterEllipseStroke" ResourceKey="Outline/Neutral/Transparent/Medium" />
+    <StaticResource x:Key="RadioButtonOuterEllipseStroke" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="RadioButtonOuterEllipseFill" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="RadioButtonSecondaryOuterEllipseFill" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="RadioButtonWarningOuterEllipseStroke" ResourceKey="Outline/Accent/Error" />    
-    <StaticResource x:Key="RadioButtonOuterEllipseStrokePointerOver" ResourceKey="Outline/Neutral/Transparent/Medium" />
+    <StaticResource x:Key="RadioButtonOuterEllipseStrokePointerOver" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="RadioButtonOuterEllipseFillPointerOver" ResourceKey="Fill/Neutral/Secondary/Hover" />
     <StaticResource x:Key="RadioButtonSecondaryOuterEllipseFillPointerOver" ResourceKey="Fill/Neutral/Primary/Hover" />
     <StaticResource x:Key="RadioButtonWarningOuterEllipseStrokePointerOver" ResourceKey="Outline/Accent/Error" />
-    <StaticResource x:Key="RadioButtonOuterEllipseStrokePressed" ResourceKey="Outline/Neutral/Transparent/Medium" />
+    <StaticResource x:Key="RadioButtonOuterEllipseStrokePressed" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="RadioButtonOuterEllipseFillPressed" ResourceKey="Fill/Neutral/Secondary/Pressed" />
     <StaticResource x:Key="RadioButtonInnerEllipseFillPressed" ResourceKey="Icons/Outline/Disabled" />
     <StaticResource x:Key="RadioButtonSecondaryOuterEllipseFillPressed" ResourceKey="Fill/Neutral/Primary/Pressed" />
     <StaticResource x:Key="RadioButtonWarningOuterEllipseStrokePressed" ResourceKey="Outline/Accent/Error" />
-    <StaticResource x:Key="RadioButtonOuterEllipseStrokeDisabled" ResourceKey="Outline/Neutral/Transparent/Medium" />
+    <StaticResource x:Key="RadioButtonOuterEllipseStrokeDisabled" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="RadioButtonOuterEllipseFillDisabled" ResourceKey="Fill/Neutral/Secondary/Disabled" />
     <StaticResource x:Key="RadioButtonSecondaryOuterEllipseFillDisabled" ResourceKey="Fill/Neutral/Primary/Disabled" />
     <StaticResource x:Key="RadioButtonCheckedOuterEllipseStroke" ResourceKey="TransparentBrush" />
@@ -500,7 +500,7 @@
     
     <StaticResource x:Key="TextEditorBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="TextEditorSecondaryBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
-    <StaticResource x:Key="TextEditorBorderBrush" ResourceKey="ThemeBackgroundColor-500" />
+    <StaticResource x:Key="TextEditorBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
     <StaticResource x:Key="TextEditorReadOnlyForeground" ResourceKey="Text/Neutral/Disabled" />
     <StaticResource x:Key="TextEditorForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
     <StaticResource x:Key="TextEditorActiveModeBackgroundDisabled" ResourceKey="Fill/Neutral/Secondary/Enabled" />
