@@ -21,7 +21,10 @@
                 <!--<views:ConnectToServerView />-->
                 
                 <!-- Activation Utility -->
-                <views:ActivationUtilityView />
+                <!--<views:ActivationUtilityView /> -->
+                
+                <!-- App Lock Form (C-Werk)-->
+                <views:AppLockFormView />
                 
             </ContentControl>
         </Border>

@@ -42,38 +42,12 @@ public partial class ActivationUtilityView : UserControl
 // Внутри ViewModel
     public ObservableCollection<LicenseInfo> LicenseItems { get; } = new()
     {
-        new LicenseInfo { Server = "DESKTOP-35KV6PT", License = "Active demo mode license file" }
+        new LicenseInfo { Server = "DESKTOP-35KV6PT", License = "Active demo mode license file" },
+        new LicenseInfo { Server = "SERVER-MAIN", License = "Enterprise Edition" },
+        new LicenseInfo { Server = "BACKUP-SRV", License = "Standby license" },
+        new LicenseInfo { Server = "DEV-NODE-4", License = "license 4" },
+        new LicenseInfo { Server = "DEV-NODE-5", License = " license 5" },
+        new LicenseInfo { Server = "DEV-NODE-6", License = "license 6" },
+        new LicenseInfo { Server = "DEV-NODE-7", License = " license 7" },
     };
-
-
-    public class PasswordBoxBehavior : Avalonia.Xaml.Interactivity.Behavior<TextEditor>
-    {
-        private const string revealButtonClassName = "revealPasswordButton";
-        public char PasswordChar { get; set; } = '*';
-        public bool ShowRevealButton { get; set; } = true;
-
-        protected override void OnAttached()
-        {
-            base.OnAttached();
-            if (AssociatedObject != null)
-                AssociatedObject.Loaded += OnLoaded;
-        }
-
-        private void OnLoaded(object sender, RoutedEventArgs e)
-        {
-            var realEditor = AssociatedObject.FindVisualChild<TextBox>();
-            if (realEditor == null)
-                return;
-            realEditor.PasswordChar = PasswordChar;
-            if (ShowRevealButton)
-                realEditor.Classes.Add(revealButtonClassName);
-        }
-
-        protected override void OnDetaching()
-        {
-            base.OnDetaching();
-            if (AssociatedObject != null)
-                AssociatedObject.Loaded -= OnLoaded;
-        }
-    }
 }

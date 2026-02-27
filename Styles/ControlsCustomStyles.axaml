@@ -26,7 +26,6 @@
         <Setter Property="FontSize" Value="14" />
     </Style>
     
-    
     <Style Selector="mxe|TextEditor.Large, mxe|ComboBoxEditor.Large, mxe|SpinEditor.Large">
         <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
         <!-- Центровк текста в контролах по вертикали - подобрать -->
@@ -39,6 +38,14 @@
             <!-- размер текста в выпадайке -->
             <x:Double x:Key="ControlContentThemeFontSize">16</x:Double>
         </Style.Resources>
+    </Style>
+    
+    <Style Selector="mxe|TextEditor[ReadOnly=True], 
+    mxe|ComboBoxEditor[ReadOnly=True], mxe|SpinEditor[ReadOnly=True]">
+        <!-- Background of the editor -->
+        <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
+        <!-- Border color -->
+        <Setter Property="BorderBrush" Value="{StaticResource ForegroundColor-10}" />
     </Style>
 
     <!-- worked -->
