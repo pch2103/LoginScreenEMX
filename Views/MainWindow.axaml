@@ -26,8 +26,11 @@
                 <!-- App Lock Form (C-Werk)-->
                 <!-- <views:AppLockFormView />-->
                 
-                <!-- App Lock Form (C-Werk)-->
-                <views:ConnectionLostView />
+                <!-- Connection Lost View-->
+                <!-- <views:ConnectionLostView /> -->
+                
+                <!-- Change Username And Password-->
+                <views:ChangeUsernameAndPasswordView />
                 
             </ContentControl>
         </Border>
