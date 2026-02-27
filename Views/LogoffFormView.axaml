@@ -1,0 +1,29 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="LoginScreenEMX.Views.LogoffFormView">
+    <Grid>
+        <!-- 1. Заголовок-->
+        <Border Grid.Row="0"
+                Margin="16 8 " PointerPressed="TitleBar_PointerPressed">
+            <Grid ColumnDefinitions="Auto, *,Auto">
+                <!-- Область для перетаскивания -->
+                <Border Grid.Column="0" Background="Transparent" Margin="0 0 10 0"
+                        VerticalAlignment="Center">
+                    <Path Data="{StaticResource LogoutCircleIcon}"
+                          Width="36"
+                          Height="36"
+                          Stretch="Uniform"
+                          Stroke="Transparent"
+                          Fill="{StaticResource PrimaryColorTint10}" />
+                </Border>
+                <Border Grid.Column="1" Background="Transparent">
+                    <TextBlock Text="Unloading application, please wait..."
+                               VerticalAlignment="Center"
+                               Classes="ONE-H2-Medium" />
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

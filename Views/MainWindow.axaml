@@ -30,7 +30,10 @@
                 <!-- <views:ConnectionLostView /> -->
                 
                 <!-- Change Username And Password-->
-                <views:ChangeUsernameAndPasswordView />
+                <!-- <views:ChangeUsernameAndPasswordView />-->
+                
+                <!-- Logoff Form View-->
+                <views:LogoffFormView />
                 
             </ContentControl>
         </Border>

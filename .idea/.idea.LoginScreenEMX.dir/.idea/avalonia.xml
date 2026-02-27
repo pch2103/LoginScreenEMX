@@ -13,6 +13,7 @@
         <entry key="Styles/WindowStyles.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ActivationUtilityView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/AppLockFormView.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Views/ChangeUsernameAndPasswordView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ConnectToServerView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ConnectionLostView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ErrorBlockView.axaml" value="LoginScreenEMX.csproj" />

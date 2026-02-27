@@ -58,6 +58,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/CheP/RiderProjects/LoginScreenEMX/Views/InfoBlockView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/CheP/RiderProjects/LoginScreenEMX/Views/LogoffFormView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/CheP/RiderProjects/LoginScreenEMX/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
