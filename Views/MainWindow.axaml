@@ -24,7 +24,10 @@
                 <!--<views:ActivationUtilityView /> -->
                 
                 <!-- App Lock Form (C-Werk)-->
-                <views:AppLockFormView />
+                <!-- <views:AppLockFormView />-->
+                
+                <!-- App Lock Form (C-Werk)-->
+                <views:ConnectionLostView />
                 
             </ContentControl>
         </Border>

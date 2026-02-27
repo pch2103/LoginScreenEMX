@@ -1,0 +1,98 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
+             xmlns:local="clr-namespace:LoginScreenEMX.Views"
+             Width="600"
+             MaxHeight="480"
+             x:Class="LoginScreenEMX.Views.ConnectionLostView">
+   <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
+        <!-- 1. Заголовок-->
+        <Border Grid.Row="0"
+                Margin="{StaticResource ThemePaddingDown-Medium}"
+                Height="{StaticResource ThemeSize-Large}">
+            <Grid ColumnDefinitions="Auto, *,Auto">
+                <!-- Область для перетаскивания -->
+                <Border Grid.Column="0" Background="Transparent" Margin="0 0 6 0"
+                        VerticalAlignment="Center"
+                        PointerPressed="TitleBar_PointerPressed">
+                    <Path Data="{StaticResource ConnectionIcon}"
+                          Width="{StaticResource ThemeSize-Double}"
+                          Height="{StaticResource ThemeSize-Double}"
+                          Stretch="Uniform"
+                          Stroke="Transparent"
+                          Fill="{StaticResource ForegroundColor}" />
+                </Border>
+                <Border Grid.Column="1" Background="Transparent" PointerPressed="TitleBar_PointerPressed">
+                    <TextBlock Text="Connection Lost"
+                               VerticalAlignment="Center"
+                               Classes="ONE-H2-Medium" />
+                </Border>
+                <!-- Кнопки управления окном -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button Classes="Subtle IconOnlyLarge" Click="CloseButton_Click"
+                            VerticalAlignment="Center">
+                        <Path Data="{StaticResource CloseIcon}"
+                              Width="{StaticResource ThemeSize-Double}"
+                              Height="{StaticResource ThemeSize-Double}"
+                              Stroke="Transparent"
+                              Fill="{StaticResource ForegroundColor}" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!-- 2. Логотип в svg -->
+        <Border Grid.Row="1" Margin="{StaticResource ThemePaddingDown-Medium}">
+            <Svg Path="/Assets/one-logo-h.svg" Width="320" Height="68" />
+        </Border>
+        <!-- 3. Контент -->
+        <Border Grid.Row="2" Margin="{StaticResource ThemePaddingDown-Medium}">
+            <Grid>
+                <!-- Фон для блока контента -->
+                <Border Classes="content-background" />
+                <!-- Функционал -->
+                <Grid ColumnDefinitions="Auto *" Margin="{StaticResource ThemePadding-Medium}">
+                    <Grid Grid.Column="0" VerticalAlignment="Top">
+                        <Path Data="{StaticResource ErrorIcon}"
+                              Width="{StaticResource ThemeSize-Large}"
+                              Height="{StaticResource ThemeSize-Large}"
+                              Stretch="Uniform"
+                              Stroke="Transparent"
+                              Fill="{StaticResource RedColor}" />
+                    </Grid>
+                    <Grid Grid.Column="1" Margin="12 6 0 0 " RowDefinitions="Auto Auto Auto Auto" VerticalAlignment="Top">
+                        <TextBlock Text="Connection to the server has been lost."
+                                   Foreground="{StaticResource RedColor}"
+                                   VerticalAlignment="Top"
+                                   Margin="{StaticResource ThemePaddingDown-Half}"
+                                   Classes="ONE-H2-Bold" />
+                        <TextBlock Grid.Row="1"
+                                   Text="An attempt to reconnect automatically will be made once the connection is restored.&#x0a;&#x0a;To select a different server for connection, click the &quot;Connect to another server&quot; button."                                   TextWrapping="Wrap"
+                                   VerticalAlignment="Top"
+                                   Classes="ONE-H3-Regular" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+        <!-- 5. Нижние кнопки -->
+        <Border Grid.Row="4">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Spacing="8">
+                    <Button Classes="Primary Large">
+                        <Grid ColumnDefinitions="Auto,*" Height="{StaticResource ThemeSize-Large}"
+                              VerticalAlignment="Center">
+                            <Path Data="{StaticResource ConnectionIcon}"
+                                  Width="20"
+                                  Height="20"
+                                  Stretch="Uniform"
+                                  Stroke="Transparent"
+                                  Fill="{StaticResource ForegroundColor}"
+                                  Margin="0 0 6 0 " />
+                            <TextBlock Grid.Column="1" Text="Connect to another server" Classes="ONE-H3-Bold"
+                                       VerticalAlignment="Center" />
+                        </Grid>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

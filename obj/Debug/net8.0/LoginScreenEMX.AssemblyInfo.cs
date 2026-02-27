@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoginScreenEMX")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e0078bb0deb4deb599ce831447732e479c863a3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fb81e21b70abcfe088040de0dd7cab6380ddc54")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoginScreenEMX")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoginScreenEMX")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

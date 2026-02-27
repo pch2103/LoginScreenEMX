@@ -43,6 +43,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/CheP/RiderProjects/LoginScreenEMX/Views/AppLockFormView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/CheP/RiderProjects/LoginScreenEMX/Views/ConnectionLostView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/CheP/RiderProjects/LoginScreenEMX/Views/ConnectToServerView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
