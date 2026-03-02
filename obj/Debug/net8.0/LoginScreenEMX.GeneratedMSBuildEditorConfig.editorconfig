@@ -52,6 +52,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/CheP/RiderProjects/LoginScreenEMX/Views/ConnectToServerView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/CheP/RiderProjects/LoginScreenEMX/Views/DateColorFontView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/CheP/RiderProjects/LoginScreenEMX/Views/ErrorBlockView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

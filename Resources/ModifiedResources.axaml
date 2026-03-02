@@ -1,46 +1,38 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:mxe="clr-namespace:Eremex.AvaloniaUI.Controls.Editors;assembly=Eremex.Avalonia.Controls"
+                    xmlns:sys="using:System"
                     xmlns:mxev="https://schemas.eremexcontrols.net/avalonia/editors"
                     xmlns:mxdg="clr-namespace:Eremex.AvaloniaUI.Controls.DataGrid;assembly=Eremex.Avalonia.Controls"
                     xmlns:mxdcv="clr-namespace:Eremex.AvaloniaUI.Controls.DataControl.Visuals;assembly=Eremex.Avalonia.Controls"
-                    xmlns:mx="https://schemas.eremexcontrols.net/avalonia">
-
+                    xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
+                    xmlns:localization="clr-namespace:Eremex.AvaloniaUI.Controls.Localization;assembly=Eremex.Avalonia.Controls">
 
     <ResourceDictionary.ThemeDictionaries>
 
-        <!-- https://github.com/Eremex/controlthemes/blob/main/Source/Eremex.Avalonia.Themes.DeltaDesign/Variants/CustomizedBrushes.axaml -->
-
-        <!-- Override resources for the Default theme variant -->
         <ResourceDictionary x:Key="Default">
             <CornerRadius x:Key="PopupCornerRadius">2</CornerRadius>
             <CornerRadius x:Key="EditorCornerRadius">2</CornerRadius>
 
             <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
-
-            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Strong"
-                             Color="{StaticResource ThemeBackgroundColor-600}" />
-            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Medium"
-                             Color="{StaticResource ThemeBackgroundColor-500}" />
-            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Light"
-                             Color="{StaticResource ThemeBackgroundColor-400}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Strong" Color="{StaticResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Medium" Color="{StaticResource ThemeBackgroundColor-500}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Light" Color="{StaticResource ThemeBackgroundColor-400}" />
             <SolidColorBrush x:Key="Icons/Outline/Gray" Color="{StaticResource ThemeForegroundColor}" />
             <SolidColorBrush x:Key="Icons/Outline/Disabled" Color="{StaticResource ThemeBackgroundColor-600}" />
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Disabled"
-                             Color="{StaticResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Disabled" Color="{StaticResource ThemeBackgroundColor-900}" />
             <SolidColorBrush x:Key="Text/Neutral/Primary" Color="{StaticResource ThemeForegroundColor}" />
             <SolidColorBrush x:Key="Text/Neutral/Tertiary" Color="{StaticResource ThemeForegroundColor}" />
             <SolidColorBrush x:Key="Fill/Accent/Highlighting/Text" Color="{StaticResource ThemePrimaryColorShade20}" />
             <SolidColorBrush x:Key="Fill/Neutral/Secondary/Hover" Color="{StaticResource ThemeBackgroundColor-500}" />
             <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled" Color="{StaticResource ThemeBackgroundColor-700}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled/Dark" Color="{StaticResource ThemeBackgroundColor-800}" />
             <SolidColorBrush x:Key="Outline/Accent/Focus" Color="{StaticResource ThemePrimaryColorTint20}" />
             <SolidColorBrush x:Key="Fill/Neutral/Primary/Enabled" Color="{StaticResource ThemeBackgroundColor-900}" />
             <SolidColorBrush x:Key="Fill/Neutral/Primary/Hover" Color="{StaticResource ThemePrimaryColorTint20}" />
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Enabled"
-                             Color="{StaticResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Enabled" Color="{StaticResource ThemePrimaryColorTint20}" />
             <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Hover" Color="{StaticResource ThemePrimaryColor}" />
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Pressed"
-                             Color="{StaticResource ThemePrimaryColorShade10}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Pressed" Color="{StaticResource ThemePrimaryColorShade10}" />
             <SolidColorBrush x:Key="Text/Neutral/Disabled" Color="{StaticResource ThemeBackgroundColor-600}" />
             <SolidColorBrush x:Key="Text/Neutral/Secondary" Color="{StaticResource ThemeForegroundColor}" />
             <SolidColorBrush x:Key="Text/Accent/Primary" Color="{StaticResource ThemeWhite}" />
@@ -54,21 +46,104 @@
             <SolidColorBrush x:Key="Fill/Accent/Primary/Disabled" Color="{StaticResource ThemeBackgroundColor-700}" />
             <SolidColorBrush x:Key="Fill/Neutral/Primary/Pressed" Color="{StaticResource ThemePrimaryColorShade20}" />
             <SolidColorBrush x:Key="Fill/Neutral/Primary/Disabled" Color="{StaticResource ThemeBackgroundColor-900}" />
-
             <SolidColorBrush x:Key="Text/Accent/Error" Color="{StaticResource ThemeRed}" />
             <SolidColorBrush x:Key=" Outline/Accent/Error" Color="{StaticResource ThemeRed}" />
-            
-
         </ResourceDictionary>
 
-
-        <!-- Override resources for the Dark theme variant -->
         <ResourceDictionary x:Key="Dark">
         </ResourceDictionary>
 
-        <!-- Override resources for the Light theme variant -->
         <ResourceDictionary x:Key="Light">
         </ResourceDictionary>
 
     </ResourceDictionary.ThemeDictionaries>
+    
+<!-- Кастомизация календаря - добавление возможности ввода времени -->
+
+    <ControlTheme x:Key="{x:Type mxe:DateEditor}" TargetType="mxe:DateEditor"
+                  BasedOn="{StaticResource {x:Type mxe:PopupEditor}}">
+        <Style Selector="^:activeMode">
+            <Setter Property="PopupFooterTemplate">
+                <ControlTemplate x:CompileBindings="False">
+                    <Border BorderThickness="0,1,0,0"
+                            BorderBrush="{DynamicResource PopupBorderBrush}"
+                            Padding="8,6">
+                        <StackPanel Spacing="8">
+                        <Grid ColumnDefinitions="Auto * Auto * Auto *"
+                              HorizontalAlignment="Center">
+                            <Path Data="{StaticResource TimeIcon}"
+                                  Margin="0,0,8,0"
+                                  Width="{StaticResource ThemeSize-Medium}"
+                                  Height="{StaticResource ThemeSize-Medium}"
+                                  Stretch="Uniform"
+                                  Stroke="Transparent"
+                                  Fill="{StaticResource ForegroundColor}" />
+                            <mxe:SpinEditor Grid.Column="1" x:Name="SpinHours" 
+                                                           Value="{Binding $parent[mxe:DateEditor].Tag.Hours}"
+                                                           Classes="Medium"
+                                                           Mask="00"
+                                                           Minimum="0"
+                                                           Maximum="23"
+                                                           Increment="1"
+                            />
+                            <TextBlock Grid.Column="2" Text=":" VerticalAlignment="Center" FontWeight="Bold" Margin="6,0"/>
+                            <mxe:SpinEditor Grid.Column="3"  x:Name="SpinMinutes"  
+                                            Value="{Binding $parent[mxe:DateEditor].Tag.Minutes}"
+                                            Classes="Medium"
+                                            Mask="00"
+                                            Minimum="0"
+                                            Maximum="59"
+                                            Increment="1"
+                            />
+                            <TextBlock Grid.Column="4" Text=":" VerticalAlignment="Center" FontWeight="Bold" Margin="6,0"/>
+                            <mxe:SpinEditor Grid.Column="5" x:Name="SpinSeconds" 
+                                                           Value="{Binding $parent[mxe:DateEditor].Tag.Seconds}"
+                                                           Classes="Medium"
+                                                           Mask="00"
+                                                           Minimum="0"
+                                                           Maximum="59"
+                                                           Increment="1"
+                            />
+                        </Grid>
+                            <Grid ColumnDefinitions="* *" Margin="0,4,0,0">
+                                <Button Content="Apply" 
+                                        Classes="Primary Medium"
+                                        HorizontalAlignment="Stretch"
+                                        Margin="0,0,4,0"
+                                        Command="{Binding $parent[mxe:DateEditor].ClosePopupCommand}">
+                                    <Button.CommandParameter>
+                                        <mxe:PopupCloseMode>Apply</mxe:PopupCloseMode>
+                                    </Button.CommandParameter>
+                                </Button>
+                                <Button Grid.Column="1"
+                                        Content="Cancel" 
+                                        Classes="Medium"
+                                        HorizontalAlignment="Stretch"
+                                        Command="{Binding $parent[mxe:DateEditor].ClosePopupCommand}">
+                                    <Button.CommandParameter>
+                                        <mxe:PopupCloseMode>Cancel</mxe:PopupCloseMode>
+                                    </Button.CommandParameter>
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+            <Setter Property="PopupContent">
+                <Setter.Value>
+                    <Template>
+                        <mxe:CalendarControl BorderThickness="0"
+                                             HorizontalAlignment="Center"
+                                             ReadOnly="{Binding $parent[mxe:DateEditor].ReadOnly}"
+                                             FirstDayOfWeek="{Binding $parent[mxe:DateEditor].FirstDayOfWeek}"
+                                             FontSize="{StaticResource ThemeSize-Regular}"
+                                             FontFamily="{StaticResource DefaultFont}"
+                                             FontWeight="Medium"
+                                             CornerRadius="2"/>
+                    </Template>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ControlTheme>
+
 </ResourceDictionary>

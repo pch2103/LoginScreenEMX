@@ -310,8 +310,8 @@
     <StaticResource x:Key="CalendarItemHeaderButtonForeground" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="CalendarItemHeaderButtonForegroundPointerOver" ResourceKey="Icons/Outline/Gray" />
     <StaticResource x:Key="CalendarItemHeaderButtonForegroundPressed" ResourceKey="Icons/Outline/Gray" />
-    <StaticResource x:Key="CalendarItemHeaderBackground" ResourceKey="Fill/Neutral/Primary/Pressed" />
-    <StaticResource x:Key="CalendarItemHeaderBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
+    <StaticResource x:Key="CalendarItemHeaderBackground" ResourceKey="Fill/Neutral/Secondary/Enabled/Dark" />
+    <StaticResource x:Key="CalendarItemHeaderBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
 
     <!-- Resources for CalendarButtons.axaml -->
 
@@ -327,9 +327,9 @@
     <StaticResource x:Key="CalendarButtonSelectedBackgroundPressed" ResourceKey="Fill/Accent/Highlighting/Item/Pressed" />
     <StaticResource x:Key="CalendarButtonForegroundBlackout" ResourceKey="Text/Neutral/Disabled" />
     <StaticResource x:Key="CalendarButtonForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
-    <StaticResource x:Key="CalendarDayButtonHolidayForeground" ResourceKey="Text/Accent/Error" />
+    <StaticResource x:Key="CalendarDayButtonHolidayForeground" ResourceKey="Outline/Accent/Focus" />
     <StaticResource x:Key="CalendarDayButtonTodayForeground" ResourceKey="Text/Neutral/Primary" />
-    <StaticResource x:Key="CalendarDayButtonTodayHolidayForeground" ResourceKey="Text/Accent/Error" />
+    <StaticResource x:Key="CalendarDayButtonTodayHolidayForeground" ResourceKey="Outline/Accent/Focus" />
 
     <!-- Resources for RadioButton.axaml -->
 
@@ -406,8 +406,8 @@
     <StaticResource x:Key="ButtonEditorInactiveButtonForeground" ResourceKey="Icons/Outline/Gray" />
 
     <StaticResource x:Key="PopupEditorPopupBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
-    <StaticResource x:Key="PopupEditorPopupHeaderBackground" ResourceKey="Fill/Neutral/Primary/Pressed" />
-    <StaticResource x:Key="PopupEditorPopupFooterBackground" ResourceKey="Fill/Neutral/Primary/Pressed" />
+    <StaticResource x:Key="PopupEditorPopupHeaderBackground" ResourceKey="Fill/Neutral/Secondary/Enabled/Dark" />
+    <StaticResource x:Key="PopupEditorPopupFooterBackground" ResourceKey="Fill/Neutral/Secondary/Enabled/Dark" />
 
     <StaticResource x:Key="GroupBoxSplitterBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
     <StaticResource x:Key="GroupBoxHeaderForeground" ResourceKey="Text/Neutral/Secondary" />
@@ -423,7 +423,7 @@
 
     <StaticResource x:Key="HyperlinkEditorForeground" ResourceKey="Outline/Accent/Focus" />
     
-    <StaticResource x:Key="ColorEditorHeaderBackground" ResourceKey="Fill/Neutral/Primary/Pressed" />
+    <StaticResource x:Key="ColorEditorHeaderBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="ColorEditorHeaderBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="ColorEditorPickerHeaderForeground" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="ColorEditorFooterBackground" ResourceKey="Fill/Neutral/Primary/Pressed" />

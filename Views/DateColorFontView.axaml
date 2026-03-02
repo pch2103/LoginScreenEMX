@@ -1,0 +1,76 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginScreenEMX.Views"
+             xmlns:vm="using:LoginScreenEMX.ViewModels"
+             xmlns:sys="using:System"
+             xmlns:col="using:System.Collections"
+             xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
+             xmlns:loginScreenEmx="clr-namespace:LoginScreenEMX"
+             Width="600"
+             MinHeight="400"
+             x:Class="LoginScreenEMX.Views.DateColorFontView"
+             x:DataType="loginScreenEmx:DateColorFontViewModel">
+
+    <Grid RowDefinitions="Auto,Auto,*,Auto,Auto">
+        <!-- 1. Заголовок-->
+        <Border Grid.Row="0"
+                Margin="{StaticResource ThemePaddingDown-Medium}"
+                Height="{StaticResource ThemeSize-Double}">
+            <Grid ColumnDefinitions="Auto, *,Auto">
+                <!-- Область для перетаскивания -->
+                <Border Grid.Column="0" Background="Transparent" Margin="0 0 6 0"
+                        VerticalAlignment="Center"
+                        PointerPressed="TitleBar_PointerPressed">
+                    <Path Data="{StaticResource SettingIcon}"
+                          Width="{StaticResource ThemeSize-Medium}"
+                          Height="{StaticResource ThemeSize-Medium}"
+                          Stretch="Uniform"
+                          Stroke="Transparent"
+                          Fill="{StaticResource ForegroundColor}" />
+                </Border>
+                <Border Grid.Column="1" Background="Transparent" PointerPressed="TitleBar_PointerPressed">
+                    <TextBlock Text="Date, Color, Font samples"
+                               VerticalAlignment="Center"
+                               Classes="ONE-H3-Bold" />
+                </Border>
+                <!-- Кнопки управления окном -->
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button Classes="Subtle IconOnlyMedium" Click="CloseButton_Click"
+                            VerticalAlignment="Center">
+                        <Path Data="{StaticResource CloseIcon}"
+                              Width="{StaticResource ThemeSize-Regular}"
+                              Height="{StaticResource ThemeSize-Regular}"
+                              Stretch="Uniform"
+                              Stroke="Transparent"
+                              Fill="{StaticResource ForegroundColor}" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Margin="{StaticResource ThemePaddingDown-Medium}">
+            <Grid>
+                <!-- Фон для блока контента -->
+                <Border Classes="content-background" />
+                <!-- Функционал -->
+                <Grid ColumnDefinitions="Auto *" Margin="{StaticResource ThemePadding-Medium}">
+                    <!-- (/Resources/ModifiedResources.axaml) Кастомизация календаря - добавление возможности ввода времени -->
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <mxe:DateEditor x:Name="MyDateEditor"
+                                        StaysPopupOpen="True"
+                                        MaskType="DateTime"
+                                        Mask="dd.MM.yyyy  HH:mm:ss"
+                                        DisplayFormatString="dd.MM.yyyy  HH:mm:ss"
+                                        Width="160"
+                                        Classes="Medium"
+                                        DateTime="{Binding SelectedDateTime}"
+                                        Tag="{Binding}"/>
+
+                    </StackPanel>
+
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

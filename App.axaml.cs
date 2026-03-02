@@ -10,6 +10,7 @@ namespace LoginScreenEMX;
 
 public partial class App : Application
 {
+    
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
@@ -17,6 +18,7 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
+#if DEBUG
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
             // Line below is needed to remove Avalonia data validation.
@@ -26,8 +28,10 @@ public partial class App : Application
             {
                 DataContext = new MainWindowViewModel(),
             };
+            
         }
-
+#endif
         base.OnFrameworkInitializationCompleted();
+
     }
 }

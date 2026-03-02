@@ -16,8 +16,10 @@
         <entry key="Views/ChangeUsernameAndPasswordView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ConnectToServerView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ConnectionLostView.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Views/DateColorFontView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ErrorBlockView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/InfoBlockView.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Views/LogoffFormView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/MainWindow.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ProxySettingsView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ProxySettngsView.axaml" value="LoginScreenEMX.csproj" />

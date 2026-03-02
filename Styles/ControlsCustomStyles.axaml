@@ -8,22 +8,46 @@
         <Setter Property="Foreground" Value="{DynamicResource BackgroundColor-500}" />
     </Style>
     
-    <!-- mxe|TextEditor, mxe|ComboBoxEditor -->
+    <!-- mxe|TextEditor, mxe|ComboBoxEditor, mxe|DateEditor -->
+    <Style  Selector="mxe|DateEditor.Medium">
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <Style.Resources>
+            <!-- размер текста в выпадайке -->
+            <x:Double x:Key="ControlContentThemeFontSize">12</x:Double>
+        </Style.Resources>
+    </Style>
+    
     <Style Selector="mxe|TextEditor.Medium, mxe|ComboBoxEditor.Medium, mxe|SpinEditor.Medium">
         <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
         <Setter Property="CornerRadius" Value="2" />
         <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
         <!-- https://github.com/Eremex/controlthemes/blob/main/Source/Eremex.Avalonia.Themes.DeltaDesign/Controls/ControlsResources.axaml -->
         <Style.Resources>
             <!-- размер текста в выпадайке -->
-            <x:Double x:Key="ControlContentThemeFontSize">11</x:Double>
+            <x:Double x:Key="ControlContentThemeFontSize">12</x:Double>
         </Style.Resources>
+    </Style>
+    
+    <Style Selector="Border#PopupBorder">
+        <Setter Property="CornerRadius" Value="2"/>
     </Style>
     
     <Style Selector="mxdg|DataGridControl.Large">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="FontSize" Value="14" />
+    </Style>
+    
+    <Style  Selector="mxe|DateEditor.Large">
+        <Setter Property="Padding" Value="8, 0, 8, 0" />
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+    </Style>
+    <Style Selector="mxe|PopupEditor">
+        <Setter Property="FontSize" Value="36"/>
     </Style>
     
     <Style Selector="mxe|TextEditor.Large, mxe|ComboBoxEditor.Large, mxe|SpinEditor.Large">
@@ -68,7 +92,7 @@
     
     <Style Selector="mxe|CheckEditor.Medium, CheckBox.Medium">
         <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
     </Style>
     
     <!-- mxe:HyperlinkEditor  -->
@@ -87,13 +111,13 @@
     
     <Style Selector="RadioButton.Medium">
         <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}"/>
     </Style>
     
     <Style Selector="mxe|HyperlinkEditor.Medium">
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
-        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
     
@@ -126,8 +150,9 @@
         <Setter Property="CornerRadius" Value="2" />
         <Setter Property="Foreground" Value="{StaticResource ForegroundColor}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
         <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Padding" Value="4 4 " />
     </Style>
     <Style Selector="Button.Large">
         <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
@@ -223,5 +248,11 @@
     <Style Selector="ToggleButton:checked PathIcon.nodeSearch-off">
         <Setter Property="IsVisible" Value="False" />
     </Style>
+
+    <Style Selector="mxe|PopupEditorProperties > Border">
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="ClipToBounds" Value="True"/>
+    </Style>
+    
 
 </Styles>

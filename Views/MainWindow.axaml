@@ -18,7 +18,7 @@
         <Border Classes="content-overlay">
             <ContentControl x:Name="MainContentControl">
                 <!-- Connect To Server -->
-                <!--<views:ConnectToServerView />-->
+                <!--  <views:ConnectToServerView /> -->
                 
                 <!-- Activation Utility -->
                 <!--<views:ActivationUtilityView /> -->
@@ -33,7 +33,10 @@
                 <!-- <views:ChangeUsernameAndPasswordView />-->
                 
                 <!-- Logoff Form View-->
-                <views:LogoffFormView />
+                <!-- <views:LogoffFormView />-->
+                
+                <!-- Date Color Font View-->
+                <views:DateColorFontView />
                 
             </ContentControl>
         </Border>
