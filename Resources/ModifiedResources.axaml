@@ -1,7 +1,8 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:mxe="clr-namespace:Eremex.AvaloniaUI.Controls.Editors;assembly=Eremex.Avalonia.Controls"
-                    xmlns:sys="using:System"
+                    xmlns:mxev2="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
+                    xmlns:common="clr-namespace:Eremex.AvaloniaUI.Controls.Common;assembly=Eremex.Avalonia.Controls"
                     xmlns:mxev="https://schemas.eremexcontrols.net/avalonia/editors"
                     xmlns:mxdg="clr-namespace:Eremex.AvaloniaUI.Controls.DataGrid;assembly=Eremex.Avalonia.Controls"
                     xmlns:mxdcv="clr-namespace:Eremex.AvaloniaUI.Controls.DataControl.Visuals;assembly=Eremex.Avalonia.Controls"
@@ -13,26 +14,34 @@
         <ResourceDictionary x:Key="Default">
             <CornerRadius x:Key="PopupCornerRadius">2</CornerRadius>
             <CornerRadius x:Key="EditorCornerRadius">2</CornerRadius>
+            <CornerRadius x:Key="PopupHeaderCornerRadius">2</CornerRadius>
 
             <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
-            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Strong" Color="{StaticResource ThemeBackgroundColor-600}" />
-            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Medium" Color="{StaticResource ThemeBackgroundColor-500}" />
-            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Light" Color="{StaticResource ThemeBackgroundColor-400}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Strong"
+                             Color="{StaticResource ThemeBackgroundColor-600}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Medium"
+                             Color="{StaticResource ThemeBackgroundColor-500}" />
+            <SolidColorBrush x:Key="Outline/Neutral/Transparent/Light"
+                             Color="{StaticResource ThemeBackgroundColor-400}" />
             <SolidColorBrush x:Key="Icons/Outline/Gray" Color="{StaticResource ThemeForegroundColor}" />
             <SolidColorBrush x:Key="Icons/Outline/Disabled" Color="{StaticResource ThemeBackgroundColor-600}" />
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Disabled" Color="{StaticResource ThemeBackgroundColor-900}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Disabled"
+                             Color="{StaticResource ThemeBackgroundColor-900}" />
             <SolidColorBrush x:Key="Text/Neutral/Primary" Color="{StaticResource ThemeForegroundColor}" />
             <SolidColorBrush x:Key="Text/Neutral/Tertiary" Color="{StaticResource ThemeForegroundColor}" />
             <SolidColorBrush x:Key="Fill/Accent/Highlighting/Text" Color="{StaticResource ThemePrimaryColorShade20}" />
             <SolidColorBrush x:Key="Fill/Neutral/Secondary/Hover" Color="{StaticResource ThemeBackgroundColor-500}" />
             <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled" Color="{StaticResource ThemeBackgroundColor-700}" />
-            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled/Dark" Color="{StaticResource ThemeBackgroundColor-800}" />
+            <SolidColorBrush x:Key="Fill/Neutral/Secondary/Enabled/Dark"
+                             Color="{StaticResource ThemeBackgroundColor-800}" />
             <SolidColorBrush x:Key="Outline/Accent/Focus" Color="{StaticResource ThemePrimaryColorTint20}" />
             <SolidColorBrush x:Key="Fill/Neutral/Primary/Enabled" Color="{StaticResource ThemeBackgroundColor-900}" />
             <SolidColorBrush x:Key="Fill/Neutral/Primary/Hover" Color="{StaticResource ThemePrimaryColorTint20}" />
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Enabled" Color="{StaticResource ThemePrimaryColorTint20}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Enabled"
+                             Color="{StaticResource ThemePrimaryColorTint20}" />
             <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Hover" Color="{StaticResource ThemePrimaryColor}" />
-            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Pressed" Color="{StaticResource ThemePrimaryColorShade10}" />
+            <SolidColorBrush x:Key="Fill/Accent/Highlighting/Item/Pressed"
+                             Color="{StaticResource ThemePrimaryColorShade10}" />
             <SolidColorBrush x:Key="Text/Neutral/Disabled" Color="{StaticResource ThemeBackgroundColor-600}" />
             <SolidColorBrush x:Key="Text/Neutral/Secondary" Color="{StaticResource ThemeForegroundColor}" />
             <SolidColorBrush x:Key="Text/Accent/Primary" Color="{StaticResource ThemeWhite}" />
@@ -48,65 +57,76 @@
             <SolidColorBrush x:Key="Fill/Neutral/Primary/Disabled" Color="{StaticResource ThemeBackgroundColor-900}" />
             <SolidColorBrush x:Key="Text/Accent/Error" Color="{StaticResource ThemeRed}" />
             <SolidColorBrush x:Key=" Outline/Accent/Error" Color="{StaticResource ThemeRed}" />
+            
+            
         </ResourceDictionary>
 
         <ResourceDictionary x:Key="Dark">
+            <CornerRadius x:Key="PopupCornerRadius">2</CornerRadius>
+            <CornerRadius x:Key="EditorCornerRadius">2</CornerRadius>
         </ResourceDictionary>
 
         <ResourceDictionary x:Key="Light">
+            <CornerRadius x:Key="PopupCornerRadius">2</CornerRadius>
+            <CornerRadius x:Key="EditorCornerRadius">2</CornerRadius>
         </ResourceDictionary>
 
     </ResourceDictionary.ThemeDictionaries>
-    
-<!-- Кастомизация календаря - добавление возможности ввода времени -->
 
+    <!-- Кастомизация календаря - добавление возможности ввода времени -->
+    
     <ControlTheme x:Key="{x:Type mxe:DateEditor}" TargetType="mxe:DateEditor"
                   BasedOn="{StaticResource {x:Type mxe:PopupEditor}}">
         <Style Selector="^:activeMode">
+            <Style Selector="^ /template/ Border#PopupBorder">
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource ThemeBackgroundColor-600}"/>
+            </Style>
+
+
             <Setter Property="PopupFooterTemplate">
                 <ControlTemplate x:CompileBindings="False">
                     <Border BorderThickness="0,1,0,0"
-                            BorderBrush="{DynamicResource PopupBorderBrush}"
-                            Padding="8,6">
+                            BorderBrush="{DynamicResource ThemeBackgroundColor-700}"
+                            Padding="0, 8, 0 ,2">
                         <StackPanel Spacing="8">
-                        <Grid ColumnDefinitions="Auto * Auto * Auto *"
-                              HorizontalAlignment="Center">
-                            <Path Data="{StaticResource TimeIcon}"
-                                  Margin="0,0,8,0"
-                                  Width="{StaticResource ThemeSize-Medium}"
-                                  Height="{StaticResource ThemeSize-Medium}"
-                                  Stretch="Uniform"
-                                  Stroke="Transparent"
-                                  Fill="{StaticResource ForegroundColor}" />
-                            <mxe:SpinEditor Grid.Column="1" x:Name="SpinHours" 
-                                                           Value="{Binding $parent[mxe:DateEditor].Tag.Hours}"
-                                                           Classes="Medium"
-                                                           Mask="00"
-                                                           Minimum="0"
-                                                           Maximum="23"
-                                                           Increment="1"
-                            />
-                            <TextBlock Grid.Column="2" Text=":" VerticalAlignment="Center" FontWeight="Bold" Margin="6,0"/>
-                            <mxe:SpinEditor Grid.Column="3"  x:Name="SpinMinutes"  
-                                            Value="{Binding $parent[mxe:DateEditor].Tag.Minutes}"
-                                            Classes="Medium"
-                                            Mask="00"
-                                            Minimum="0"
-                                            Maximum="59"
-                                            Increment="1"
-                            />
-                            <TextBlock Grid.Column="4" Text=":" VerticalAlignment="Center" FontWeight="Bold" Margin="6,0"/>
-                            <mxe:SpinEditor Grid.Column="5" x:Name="SpinSeconds" 
-                                                           Value="{Binding $parent[mxe:DateEditor].Tag.Seconds}"
-                                                           Classes="Medium"
-                                                           Mask="00"
-                                                           Minimum="0"
-                                                           Maximum="59"
-                                                           Increment="1"
-                            />
-                        </Grid>
-                            <Grid ColumnDefinitions="* *" Margin="0,4,0,0">
-                                <Button Content="Apply" 
+                            <Grid ColumnDefinitions="Auto * Auto * Auto *"
+                                  HorizontalAlignment="Center">
+                                <Path Data="{StaticResource TimeIcon}"
+                                      Margin="0,0,8,0"
+                                      Width="{StaticResource ThemeSize-Medium}"
+                                      Height="{StaticResource ThemeSize-Medium}"
+                                      Stretch="Uniform"
+                                      Stroke="Transparent"
+                                      Fill="{StaticResource ForegroundColor}" />
+                                <mxe:SpinEditor Grid.Column="1" x:Name="SpinHours"
+                                                Value="{Binding $parent[mxe:DateEditor].Tag.Hours}"
+                                                Classes="Medium"
+                                                Mask="00"
+                                                Minimum="0"
+                                                Maximum="23"
+                                                Increment="1" />
+                                <TextBlock Grid.Column="2" Text=":" VerticalAlignment="Center" FontWeight="Bold"
+                                           Margin="6,0" />
+                                <mxe:SpinEditor Grid.Column="3" x:Name="SpinMinutes"
+                                                Value="{Binding $parent[mxe:DateEditor].Tag.Minutes}"
+                                                Classes="Medium"
+                                                Mask="00"
+                                                Minimum="0"
+                                                Maximum="59"
+                                                Increment="1" />
+                                <TextBlock Grid.Column="4" Text=":" VerticalAlignment="Center" FontWeight="Bold"
+                                           Margin="6,0" />
+                                <mxe:SpinEditor Grid.Column="5" x:Name="SpinSeconds"
+                                                Value="{Binding $parent[mxe:DateEditor].Tag.Seconds}"
+                                                Classes="Medium"
+                                                Mask="00"
+                                                Minimum="0"
+                                                Maximum="59"
+                                                Increment="1" />
+                            </Grid>
+                            <Grid ColumnDefinitions="* *" Margin="4">
+                                <Button Content="Apply"
                                         Classes="Primary Medium"
                                         HorizontalAlignment="Stretch"
                                         Margin="0,0,4,0"
@@ -116,8 +136,8 @@
                                     </Button.CommandParameter>
                                 </Button>
                                 <Button Grid.Column="1"
-                                        Content="Cancel" 
-                                        Classes="Medium"
+                                        Content="Cancel"
+                                        Classes="Secondary Medium"
                                         HorizontalAlignment="Stretch"
                                         Command="{Binding $parent[mxe:DateEditor].ClosePopupCommand}">
                                     <Button.CommandParameter>
@@ -136,13 +156,199 @@
                                              HorizontalAlignment="Center"
                                              ReadOnly="{Binding $parent[mxe:DateEditor].ReadOnly}"
                                              FirstDayOfWeek="{Binding $parent[mxe:DateEditor].FirstDayOfWeek}"
-                                             FontSize="{StaticResource ThemeSize-Regular}"
+                                             FontSize="{StaticResource ThemeSize-Subs}"
                                              FontFamily="{StaticResource DefaultFont}"
-                                             FontWeight="Medium"
-                                             CornerRadius="2"/>
+                                             FontWeight="SemiBold" />
                     </Template>
                 </Setter.Value>
             </Setter>
+        </Style>
+    </ControlTheme>
+   
+    <!-- Кастомизация кнопки в Editor -->
+    <ControlTheme x:Key="EditorIconButtonBaseTheme" TargetType="Button">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}"/>
+        <Setter Property="FocusAdorner" Value="{x:Null}" />
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Padding" Value="{DynamicResource EditorIconButtonPadding}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="MinWidth" Value="{StaticResource ButtonMinWidth}"/>
+        <Setter Property="Foreground" Value="{DynamicResource IconButtonForeground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}" />
+        <Setter Property="Background" Value="{DynamicResource IconButtonBackground}"/>
+
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Panel>
+                    <Border x:Name="PART_BackgroundBorder"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{StaticResource DefaultCornerRadius}"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter x:Name="PART_ContentPresenter"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          CornerRadius="{StaticResource DefaultCornerRadius}"
+                                          RecognizesAccessKey="True"
+                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <Border Name="PART_ButtonBorder"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{StaticResource DefaultCornerRadius}"
+                            Background="{x:Null}"/>
+                </Panel>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource IconButtonForeground}" />
+        </Style>
+
+        <!-- PointerOver, KeyboardFocused State -->
+        <Style Selector="^:pointerover, ^:focus-visible">
+            <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundPointerOver}" />
+
+            <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonBackgroundPointerOver}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundPointerOver}" />
+            </Style>
+        </Style>
+
+        <!-- Pressed State -->
+        <Style Selector="^:pressed">
+            <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundPressed}" />
+
+            <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonBackgroundPressed}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundPressed}" />
+                <Setter Property="Opacity" Value="0.8"/>
+            </Style>
+        </Style>
+
+        <!-- Disabled State -->
+        <Style Selector="^:disabled">
+            <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundDisabled}" />
+
+            <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonBackgroundDisabled}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource IconButtonBackgroundDisabled}" />
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonForegroundDisabled}" />
+            </Style>
+        </Style>
+
+        <!--Secondary style-->
+        <Style Selector="^.secondary">
+            <Style Selector="^ /template/ Border#PART_ButtonBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource IconButtonBorderBrush}" />
+            </Style>
+
+            <!-- PointerOver, KeyboardFocused State -->
+            <Style Selector="^:pointerover /template/ Border#PART_ButtonBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource IconButtonSecondaryBorderBrushPointerOver}" />
+                <Setter Property="BorderThickness" Value="{StaticResource EditorBorderThickness}"/>
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#PART_BackgroundBorder,
+					 ^:focus-visible /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonSecondaryBackgroundPointerOver}" />
+            </Style>
+            <Style Selector="^:focus-visible /template/ Border#PART_ButtonBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource TransparentBrush}" />
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+
+            <!-- Pressed State -->
+            <Style Selector="^:pressed /template/ Border#PART_ButtonBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource IconButtonSecondaryBorderBrushPressed}" />
+                <Setter Property="BorderThickness" Value="{StaticResource EditorBorderThickness}"/>
+            </Style>
+            <Style Selector="^:pressed /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonSecondaryBackgroundPressed}" />
+            </Style>
+        </Style>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type mxev2:EditorIconButton}" TargetType="mxev2:EditorIconButton" BasedOn="{StaticResource EditorIconButtonBaseTheme}"/>
+
+    <ControlTheme x:Key="{x:Type mxev2:EditorIconToggleButton}" TargetType="mxev2:EditorIconToggleButton" BasedOn="{StaticResource EditorIconButtonBaseTheme}">
+        <Style Selector="^:checked">
+            <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForeground}" />
+
+            <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                <Setter Property="Background" Value="{DynamicResource IconButtonCheckedBackground}" />
+            </Style>
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForeground}" />
+            </Style>
+
+            <!-- CheckedPointerOver, KeyboardFocused State -->
+            <Style Selector="^:pointerover, ^:focus-visible">
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundPointerOver}" />
+
+                <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                    <Setter Property="Background" Value="{DynamicResource IconButtonCheckedBackgroundPointerOver}" />
+                </Style>
+                <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundPointerOver}" />
+                </Style>
+            </Style>
+
+            <!-- CheckedPressed State -->
+            <Style Selector="^:pressed">
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundPressed}" />
+
+                <Style Selector="^ /template/ Border#PART_BackgroundBorder">
+                    <Setter Property="Background" Value="{DynamicResource IconButtonCheckedBackgroundPressed}" />
+                </Style>
+                <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundPressed}" />
+                </Style>
+            </Style>
+
+            <!-- CheckedDisabled State -->
+            <Style Selector="^:disabled">
+                <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundDisabled}" />
+
+                <Style Selector="^/template/ Border#PART_BackgroundBorder">
+                    <Setter Property="Background" Value="{DynamicResource IconButtonCheckedBackgroundDisabled}" />
+                </Style>
+                <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                    <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource IconButtonCheckedForegroundDisabled}" />
+                </Style>
+            </Style>
+        </Style>
+
+        <Style Selector="^.secondary">
+            <Style Selector="^:checked">
+                <Style Selector="^:pointerover /template/ Border#PART_ButtonBorder,
+                           ^:focus-visible /template/ Border#PART_ButtonBorder">
+                    <Setter Property="BorderBrush" Value="{DynamicResource TransparentBrush}" />
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+
+                <!-- CheckedDisabled State -->
+                <Style Selector="^:disabled /template/ Border#PART_BackgroundBorder">
+                    <Setter Property="Background" Value="{DynamicResource IconButtonSecondaryCheckedBackgroundDisabled}" />
+                </Style>
+                <Style Selector="^:disabled /template/ Border#PART_ButtonBorder">
+                    <Setter Property="BorderBrush" Value="{DynamicResource IconButtonSecondaryCheckedBorderBrushDisabled}" />
+                    <Setter Property="BorderThickness" Value="{StaticResource EditorBorderThickness}"/>
+                </Style>
+            </Style>
         </Style>
     </ControlTheme>
 

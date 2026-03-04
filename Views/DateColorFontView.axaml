@@ -7,6 +7,7 @@
              xmlns:sys="using:System"
              xmlns:col="using:System.Collections"
              xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
+             xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
              xmlns:loginScreenEmx="clr-namespace:LoginScreenEMX"
              Width="600"
              MinHeight="400"
@@ -65,8 +66,8 @@
                                         Width="160"
                                         Classes="Medium"
                                         DateTime="{Binding SelectedDateTime}"
-                                        Tag="{Binding}"/>
-
+                                        Tag="{Binding}">
+                        </mxe:DateEditor>
                     </StackPanel>
 
                 </Grid>

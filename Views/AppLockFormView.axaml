@@ -59,7 +59,8 @@
                               Stroke="Transparent"
                               Fill="{StaticResource OrangeColor}" />
                     </Grid>
-                    <Grid Grid.Column="1" Margin="12 6 0 0 " RowDefinitions="Auto Auto Auto Auto" VerticalAlignment="Top">
+                    <Grid Grid.Column="1" Margin="12 6 0 0 " RowDefinitions="Auto Auto Auto Auto"
+                          VerticalAlignment="Top">
                         <TextBlock Text="Application Locked!"
                                    Foreground="{StaticResource OrangeColor}"
                                    VerticalAlignment="Top"
@@ -79,7 +80,7 @@
                                            VerticalAlignment="Center"
                                            Classes="One-Subs-Regular" />
                                 <mxe:TextEditor Name="UserName" Classes="Large"
-                                                ReadOnly="True" 
+                                                ReadOnly="True"
                                                 EditorValue="root"
                                                 HorizontalContentAlignment="Left" />
                                 <TextBlock Text="Your Current Username"

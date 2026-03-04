@@ -13,7 +13,7 @@
         <StyleInclude Source="/Styles/ControlsCustomStyles.axaml" />
         <StyleInclude Source="/Styles/WindowStyles.axaml" />
     </Application.Styles>
-    
+
     <!-- 2. Переписываем цвета контролов кастомную -->
     <Application.Resources>
         <ResourceDictionary>
@@ -23,8 +23,4 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources> 
-
-    
-
-  
 </Application>

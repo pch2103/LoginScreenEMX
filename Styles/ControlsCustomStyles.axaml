@@ -7,21 +7,89 @@
     <Style Selector="TextBlock:disabled">
         <Setter Property="Foreground" Value="{DynamicResource BackgroundColor-500}" />
     </Style>
+    <Style Selector="mxe|DateEditor CalendarItem /template/ Border#PART_HeaderDecorationBorder">
+        <Setter Property="BorderBrush" Value="Red" />
+        <Setter Property="BorderThickness" Value="0,1,0,1" />
+    </Style>
+    <!-- Скругление для выбранной даты календаря mxe|DateEditor -->
+    <Style Selector="CalendarDayButton:selected /template/ Border#PART_BackgroundBorder">
+        <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
+    </Style>
     
-    <!-- mxe|TextEditor, mxe|ComboBoxEditor, mxe|DateEditor -->
-    <Style  Selector="mxe|DateEditor.Medium">
-        <Setter Property="CornerRadius" Value="2" />
+    
+    <!-- mxe|DateEditor -->
+    <Style Selector="mxe|DateEditor">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
-        <Style.Resources>
-            <!-- размер текста в выпадайке -->
-            <x:Double x:Key="ControlContentThemeFontSize">12</x:Double>
-        </Style.Resources>
+        <!--Замена стандарной иконки кадлендаря на нашу-->
+        <Style Selector="^ mxev|EditorIconToggleButton#PART_PopupOpenButton">
+            <Setter Property="Theme">
+                <ControlTheme TargetType="mxev:EditorIconToggleButton">
+                    <Setter Property="Template">
+                        <ControlTemplate>
+                            <Border x:Name="PART_Border"
+                                    CornerRadius="{StaticResource DefaultCornerRadius}"
+                                    Background="Transparent"
+                                    Padding="6, 4 , 4, 4"
+                                    VerticalAlignment="Stretch">
+                                <Path x:Name="PART_Icon"
+                                      Data="{StaticResource CalendarIcon}"
+                                      Fill="{DynamicResource CalendarButtonForeground}"
+                                      Stretch="Uniform"
+                                      Width="16" Height="16"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter>
+
+                    <Style Selector="^:pointerover /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundColor-400}" />
+                    </Style>
+                    <Style Selector="^:pointerover /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundPointerOver}" />
+                    </Style>
+
+                    <Style Selector="^:pressed /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundPressed}" />
+                    </Style>
+                    <Style Selector="^:pressed /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundPressed}" />
+                    </Style>
+
+                    <Style Selector="^:checked /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource CalendarButtonSelectedBackground}" />
+                    </Style>
+                    <Style Selector="^:checked /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonSelectedForeground}" />
+                    </Style>
+
+                    <Style Selector="^:disabled /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundDisabled}" />
+                        <Setter Property="Opacity" Value="0.5" />
+                    </Style>
+                </ControlTheme>
+            </Setter>
+        </Style>
     </Style>
+    <Style Selector="mxe|DateEditor.Medium">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+    </Style>
+    
+    <Style Selector="mxe|DateEditor.Large">
+        <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
+    </Style>
+    
+    <!--mxe|TextEditor mxe|ComboBoxEditor mxe|SpinEditor-->
     
     <Style Selector="mxe|TextEditor.Medium, mxe|ComboBoxEditor.Medium, mxe|SpinEditor.Medium">
         <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
-        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
         <!-- https://github.com/Eremex/controlthemes/blob/main/Source/Eremex.Avalonia.Themes.DeltaDesign/Controls/ControlsResources.axaml -->
@@ -30,31 +98,24 @@
             <x:Double x:Key="ControlContentThemeFontSize">12</x:Double>
         </Style.Resources>
     </Style>
-    
-    <Style Selector="Border#PopupBorder">
-        <Setter Property="CornerRadius" Value="2"/>
-    </Style>
-    
+
     <Style Selector="mxdg|DataGridControl.Large">
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="FontSize" Value="14" />
     </Style>
-    
-    <Style  Selector="mxe|DateEditor.Large">
+
+    <Style Selector="mxe|DateEditor.Large">
         <Setter Property="Padding" Value="8, 0, 8, 0" />
-        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
     </Style>
-    <Style Selector="mxe|PopupEditor">
-        <Setter Property="FontSize" Value="36"/>
-    </Style>
-    
+
     <Style Selector="mxe|TextEditor.Large, mxe|ComboBoxEditor.Large, mxe|SpinEditor.Large">
         <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
         <!-- Центровк текста в контролах по вертикали - подобрать -->
         <Setter Property="Padding" Value="8, 0, 8, 2" />
-        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
         <!-- https://github.com/Eremex/controlthemes/blob/main/Source/Eremex.Avalonia.Themes.DeltaDesign/Controls/ControlsResources.axaml -->
@@ -63,8 +124,9 @@
             <x:Double x:Key="ControlContentThemeFontSize">16</x:Double>
         </Style.Resources>
     </Style>
-    
-    <Style Selector="mxe|TextEditor[ReadOnly=True], 
+
+    <Style
+        Selector="mxe|TextEditor[ReadOnly=True], 
     mxe|ComboBoxEditor[ReadOnly=True], mxe|SpinEditor[ReadOnly=True]">
         <!-- Background of the editor -->
         <Setter Property="Background" Value="{StaticResource TransparentBrush}" />
@@ -79,7 +141,7 @@
 
     <!-- worked -->
     <Style Selector="ListBoxItem">
-        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="Padding" Value="4" />
     </Style>
@@ -89,12 +151,12 @@
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
     </Style>
-    
+
     <Style Selector="mxe|CheckEditor.Medium, CheckBox.Medium">
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
     </Style>
-    
+
     <!-- mxe:HyperlinkEditor  -->
     <Style Selector="mxe|HyperlinkEditor.Large">
         <Setter Property="FontFamily" Value="DefaultFont" />
@@ -102,25 +164,25 @@
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Padding" Value="0" />
     </Style>
-    
+
     <!--  RadioButton -->
     <Style Selector="RadioButton.Large">
         <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}"/>
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
     </Style>
-    
+
     <Style Selector="RadioButton.Medium">
         <Setter Property="FontFamily" Value="DefaultFont" />
-        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}"/>
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
     </Style>
-    
+
     <Style Selector="mxe|HyperlinkEditor.Medium">
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
-    
+
     <!-- Стиль для гиперссылки -->
     <Style Selector="Button.Empty">
         <Setter Property="Padding" Value="0" />
@@ -129,25 +191,25 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
     </Style>
-    
+
     <Style Selector="Button.Empty:pointerover /template/ Border#PART_BackgroundBorder">
         <Setter Property="Background" Value="{StaticResource TransparentColor}" />
     </Style>
-    
+
     <!-- Button -->
     <Style Selector="Button.IconOnlyLarge, ToggleButton.IconOnlyLarge">
         <Setter Property="Width" Value="{StaticResource ThemeSize-Large}" />
         <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
-        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
     </Style>
     <Style Selector="Button.IconOnlyMedium, ToggleButton.IconOnlyMedium">
         <Setter Property="Width" Value="{StaticResource ThemeSize-Double}" />
         <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
-        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
     </Style>
     <Style Selector="Button.Medium">
         <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
-        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
         <Setter Property="Foreground" Value="{StaticResource ForegroundColor}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
@@ -156,7 +218,7 @@
     </Style>
     <Style Selector="Button.Large">
         <Setter Property="Height" Value="{StaticResource ThemeSize-Large}" />
-        <Setter Property="CornerRadius" Value="3" />
+        <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
         <Setter Property="Foreground" Value="{StaticResource ForegroundColor}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="14" />
@@ -168,7 +230,7 @@
         <Setter Property="Background" Value="{StaticResource PrimaryColor}" />
         <Setter Property="BorderBrush" Value="{StaticResource PrimaryColor}" />
         <Setter Property="BorderThickness" Value="1" />
-        
+
 
     </Style>
     <Style Selector="Button.Primary /template/ ContentPresenter#PART_ContentPresenter">
@@ -249,10 +311,5 @@
         <Setter Property="IsVisible" Value="False" />
     </Style>
 
-    <Style Selector="mxe|PopupEditorProperties > Border">
-        <Setter Property="CornerRadius" Value="2"/>
-        <Setter Property="ClipToBounds" Value="True"/>
-    </Style>
-    
 
 </Styles>

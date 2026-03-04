@@ -1,12 +1,11 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                     xmlns:sys="using:System"
-                     xmlns:mxe="clr-namespace:Eremex.AvaloniaUI.Controls.Editors;assembly=Eremex.Avalonia.Controls"
-                     xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
-                     xmlns:media="clr-namespace:Avalonia.Media;assembly=Avalonia.Visuals">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="using:System"
+                    xmlns:mxe="clr-namespace:Eremex.AvaloniaUI.Controls.Editors;assembly=Eremex.Avalonia.Controls"
+                    xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
+                    xmlns:media="clr-namespace:Avalonia.Media;assembly=Avalonia.Visuals">
 
     <!-- Resources for Button.axaml -->
-
     <StaticResource x:Key="ButtonBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="ButtonForeground" ResourceKey="Text/Accent/Primary" />
     <StaticResource x:Key="ButtonBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
@@ -65,7 +64,7 @@
     <StaticResource x:Key="ToggleSwitchKnobFillOn" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="ToggleSwitchKnobFillOff" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="ToggleSwitchFillOn" ResourceKey="Fill/Accent/Primary/Enabled" />
-    <StaticResource x:Key="ToggleSwitchFillOff" ResourceKey="Outline/Neutral/Transparent/Light" />    
+    <StaticResource x:Key="ToggleSwitchFillOff" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="ToggleSwitchStrokeOn" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="ToggleSwitchStrokeOff" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="ToggleSwitchStrokeOffPointerOver" ResourceKey="TransparentBrush" />
@@ -79,7 +78,7 @@
     <StaticResource x:Key="ToggleSwitchKnobFillOnPressed" ResourceKey="Fill/Neutral/Primary/Pressed" />
     <StaticResource x:Key="ToggleSwitchKnobFillOffPressed" ResourceKey="Fill/Neutral/Primary/Pressed" />
     <StaticResource x:Key="ToggleSwitchStrokeOnPressed" ResourceKey="TransparentBrush" />
-    <StaticResource x:Key="ToggleSwitchFillOnPressed" ResourceKey="Fill/Accent/Primary/Enabled" />    
+    <StaticResource x:Key="ToggleSwitchFillOnPressed" ResourceKey="Fill/Accent/Primary/Enabled" />
     <StaticResource x:Key="ToggleSwitchHeaderForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
     <StaticResource x:Key="ToggleSwitchStrokeOffDisabled" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="ToggleSwitchFillOffDisabled" ResourceKey="Fill/Accent/Highlighting/Item/Disabled" />
@@ -134,7 +133,7 @@
     <StaticResource x:Key="ExpanderChevronButtonBackgroundDisabled" ResourceKey="TransparentBrush" />
 
     <!-- Resources for CheckBox.axaml -->
-    
+
     <StaticResource x:Key="CheckBoxForeground" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="CheckBoxRectBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="CheckBoxRectBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
@@ -146,7 +145,7 @@
     <StaticResource x:Key="CheckBoxRectBackgroundPointerOver" ResourceKey="Fill/Neutral/Secondary/Hover" />
     <StaticResource x:Key="CheckBoxStrokePointerOver" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="CheckBoxSecondaryRectBackgroundPointerOver" ResourceKey="Fill/Neutral/Primary/Hover" />
-    <StaticResource x:Key="CheckBoxWarningRectBorderBrushPointerOver" ResourceKey="Outline/Accent/Error" />  
+    <StaticResource x:Key="CheckBoxWarningRectBorderBrushPointerOver" ResourceKey="Outline/Accent/Error" />
     <StaticResource x:Key="CheckBoxForegroundPressed" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="CheckBoxRectBorderBrushPressed" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="CheckBoxRectBackgroundPressed" ResourceKey="Fill/Neutral/Secondary/Pressed" />
@@ -157,12 +156,12 @@
     <StaticResource x:Key="CheckBoxRectBorderBrushDisabled" ResourceKey="Fill/Accent/Primary/Disabled" />
     <StaticResource x:Key="CheckBoxRectBackgroundDisabled" ResourceKey="Fill/Accent/Primary/Disabled" />
     <StaticResource x:Key="CheckBoxStrokeDisabled" ResourceKey="TransparentBrush" />
-    <StaticResource x:Key="CheckBoxSecondaryRectBackgroundDisabled" ResourceKey="Fill/Neutral/Primary/Disabled" /> 
+    <StaticResource x:Key="CheckBoxSecondaryRectBackgroundDisabled" ResourceKey="Fill/Neutral/Primary/Disabled" />
     <StaticResource x:Key="CheckBoxCheckedForeground" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="CheckBoxCheckedRectBorderBrush" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="CheckBoxCheckedRectBackground" ResourceKey="Fill/Accent/Primary/Enabled" />
     <StaticResource x:Key="CheckBoxCheckedStroke" ResourceKey="Icons/Outline/On Accent" />
-    <StaticResource x:Key="CheckBoxCheckedWarningRectBackground" ResourceKey="Fill/Accent/Error/Enabled" />   
+    <StaticResource x:Key="CheckBoxCheckedWarningRectBackground" ResourceKey="Fill/Accent/Error/Enabled" />
     <StaticResource x:Key="CheckBoxCheckedForegroundPointerOver" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="CheckBoxCheckedRectBorderBrushPointerOver" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="CheckBoxCheckedRectBackgroundPointerOver" ResourceKey="Fill/Accent/Primary/Hover" />
@@ -172,7 +171,7 @@
     <StaticResource x:Key="CheckBoxCheckedRectBorderBrushPressed" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="CheckBoxCheckedRectBackgroundPressed" ResourceKey="Fill/Accent/Primary/Pressed" />
     <StaticResource x:Key="CheckBoxCheckedStrokePressed" ResourceKey="Icons/Outline/On Accent" />
-    <StaticResource x:Key="CheckBoxCheckedWarningRectBackgroundPressed" ResourceKey="Fill/Accent/Error/Pressed" />  
+    <StaticResource x:Key="CheckBoxCheckedWarningRectBackgroundPressed" ResourceKey="Fill/Accent/Error/Pressed" />
     <StaticResource x:Key="CheckBoxCheckedForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
     <StaticResource x:Key="CheckBoxCheckedRectBorderBrushDisabled" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="CheckBoxCheckedRectBackgroundDisabled" ResourceKey="Fill/Accent/Primary/Disabled" />
@@ -210,7 +209,8 @@
     <StaticResource x:Key="SliderThumbInnerFill" ResourceKey="Fill/Accent/Primary/Enabled" />
     <StaticResource x:Key="SliderSecondaryRailBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="SliderSecondaryRailBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
-    <StaticResource x:Key="SliderSecondaryDecreaseButtonTrackBackground" ResourceKey="Outline/Neutral/Transparent/Medium" />
+    <StaticResource x:Key="SliderSecondaryDecreaseButtonTrackBackground"
+                    ResourceKey="Outline/Neutral/Transparent/Medium" />
     <StaticResource x:Key="SliderThumbInnerFillPointerOver" ResourceKey="Fill/Accent/Primary/Hover" />
     <StaticResource x:Key="SliderThumbInnerFillPressed" ResourceKey="Fill/Accent/Primary/Pressed" />
     <StaticResource x:Key="SliderRailBackgroundDisabled" ResourceKey="Fill/Neutral/Secondary/Disabled" />
@@ -253,7 +253,7 @@
 
     <StaticResource x:Key="GridSplitterBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="GridSplitterPreviewBackground" ResourceKey="Fill/Neutral/Secondary/Pressed" />
-    <StaticResource x:Key="PathIconForeground" ResourceKey="Icons/Outline/Gray" />   
+    <StaticResource x:Key="PathIconForeground" ResourceKey="Icons/Outline/Gray" />
     <StaticResource x:Key="SystemControlForegroundBaseHighBrush" ResourceKey="Text/Neutral/Primary" />
 
     <!-- Resources for ProgressBar.axaml -->
@@ -339,7 +339,7 @@
     <StaticResource x:Key="RadioButtonOuterEllipseStroke" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="RadioButtonOuterEllipseFill" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="RadioButtonSecondaryOuterEllipseFill" ResourceKey="Fill/Neutral/Primary/Enabled" />
-    <StaticResource x:Key="RadioButtonWarningOuterEllipseStroke" ResourceKey="Outline/Accent/Error" />    
+    <StaticResource x:Key="RadioButtonWarningOuterEllipseStroke" ResourceKey="Outline/Accent/Error" />
     <StaticResource x:Key="RadioButtonOuterEllipseStrokePointerOver" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="RadioButtonOuterEllipseFillPointerOver" ResourceKey="Fill/Neutral/Secondary/Hover" />
     <StaticResource x:Key="RadioButtonSecondaryOuterEllipseFillPointerOver" ResourceKey="Fill/Neutral/Primary/Hover" />
@@ -373,7 +373,7 @@
     <StaticResource x:Key="TextBoxCaretBrush" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="TextBoxBorderBrush" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="TextBoxSelectionBrush" ResourceKey="Fill/Accent/Highlighting/Text" />
-    <StaticResource x:Key="EditorsErrorIconBrush" ResourceKey="Icons/Outline/Red" />    
+    <StaticResource x:Key="EditorsErrorIconBrush" ResourceKey="Icons/Outline/Red" />
     <StaticResource x:Key="TextBoxWatermarkBrush" ResourceKey="Text/Neutral/Tertiary" />
     <StaticResource x:Key="TextBoxSecondaryBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="TextBoxSecondaryBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
@@ -401,8 +401,9 @@
     <StaticResource x:Key="TextEditorInactiveDecoratorBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="TextEditorSecondaryInactiveDecoratorBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="TextEditorInactiveDecoratorBorderBrush" ResourceKey="TransparentBrush" />
-    <StaticResource x:Key="TextEditorSecondaryInactiveDecoratorBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
-   
+    <StaticResource x:Key="TextEditorSecondaryInactiveDecoratorBorderBrush"
+                    ResourceKey="Outline/Neutral/Transparent/Light" />
+
     <StaticResource x:Key="ButtonEditorInactiveButtonForeground" ResourceKey="Icons/Outline/Gray" />
 
     <StaticResource x:Key="PopupEditorPopupBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
@@ -417,12 +418,13 @@
 
     <StaticResource x:Key="SplitContainerControlSplitterBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="SplitContainerControlSplitterForeground" ResourceKey="Text/Neutral/Tertiary" />
-    <StaticResource x:Key="SplitContainerControlSplitterBackgroundPointerOver" ResourceKey="Fill/Neutral/Secondary/Hover" />
+    <StaticResource x:Key="SplitContainerControlSplitterBackgroundPointerOver"
+                    ResourceKey="Fill/Neutral/Secondary/Hover" />
     <StaticResource x:Key="SplitContainerControlSplitterBackgroundPressed" ResourceKey="Fill/Neutral/Secondary/Pressed" />
     <StaticResource x:Key="SplitContainerControlSplitterForegroundPressed" ResourceKey="Text/Neutral/Secondary" />
 
     <StaticResource x:Key="HyperlinkEditorForeground" ResourceKey="Outline/Accent/Focus" />
-    
+
     <StaticResource x:Key="ColorEditorHeaderBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="ColorEditorHeaderBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="ColorEditorPickerHeaderForeground" ResourceKey="Text/Neutral/Primary" />
@@ -432,16 +434,18 @@
     <StaticResource x:Key="ColorEditorMoreColorsButtonForeground" ResourceKey="Icons/Outline/Gray" />
     <StaticResource x:Key="ColorEditorMoreColorsButtonBorderBrush" ResourceKey="Outline/Neutral/On Primary/Strong" />
     <StaticResource x:Key="ColorEditorMoreColorsButtonBackgroundPointerOver" ResourceKey="Fill/Neutral/Primary/Hover" />
-    <StaticResource x:Key="ColorEditorMoreColorsButtonBackgroundPressed" ResourceKey="Fill/Neutral/Primary/Pressed" />    
+    <StaticResource x:Key="ColorEditorMoreColorsButtonBackgroundPressed" ResourceKey="Fill/Neutral/Primary/Pressed" />
     <StaticResource x:Key="ColorEditorToggleButtonBorderBrush" ResourceKey="Outline/Neutral/Transparent/Strong" />
     <StaticResource x:Key="ColorEditorBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="ColorEditorBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
     <StaticResource x:Key="ColorEditorSplitterBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
     <StaticResource x:Key="ColorEditorStandardColorsHeaderForeground" ResourceKey="Text/Neutral/Secondary" />
     <StaticResource x:Key="ColorEditorMoreColorsHeaderForeground" ResourceKey="Text/Neutral/Secondary" />
-    <StaticResource x:Key="ColorEditorPlatformColorIndicatorBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
+    <StaticResource x:Key="ColorEditorPlatformColorIndicatorBorderBrush"
+                    ResourceKey="Outline/Neutral/Transparent/Medium" />
     <StaticResource x:Key="ColorEditorPlatformColorItemForegroundDisabled" ResourceKey="Text/Neutral/Primary" />
-    <StaticResource x:Key="ColorEditorSelectedPlatformColorItemBackgroundDisabled" ResourceKey="Fill/Accent/Highlighting/Item/Enabled" />
+    <StaticResource x:Key="ColorEditorSelectedPlatformColorItemBackgroundDisabled"
+                    ResourceKey="Fill/Accent/Highlighting/Item/Enabled" />
 
     <StaticResource x:Key="TransparencySliderThumbStroke" ResourceKey="Outline/Neutral/Transparent/Medium" />
     <StaticResource x:Key="TransparencySliderRailBorderBrush" ResourceKey="Outline/Neutral/Transparent/Strong" />
@@ -461,17 +465,24 @@
     <StaticResource x:Key="PopupColorEditorColorIndicatorBorderBrush" ResourceKey="Outline/Neutral/Transparent/Strong" />
     <StaticResource x:Key="PopupColorEditorBackgroundPointerOver" ResourceKey="Fill/Neutral/Secondary/Hover" />
     <StaticResource x:Key="PopupColorEditorSecondaryBackgroundPointerOver" ResourceKey="Fill/Neutral/Primary/Hover" />
-    <StaticResource x:Key="PopupColorEditorSecondaryBorderBrushPointerOver" ResourceKey="Outline/Neutral/Transparent/Light" />
-   
-    <StaticResource x:Key="ComboBoxEditorMultipleItemBackgroundPointerOver" ResourceKey="Fill/Neutral/Secondary/Enabled" />
+    <StaticResource x:Key="PopupColorEditorSecondaryBorderBrushPointerOver"
+                    ResourceKey="Outline/Neutral/Transparent/Light" />
+
+    <StaticResource x:Key="ComboBoxEditorMultipleItemBackgroundPointerOver"
+                    ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="ComboBoxEditorMultipleItemBackgroundPressed" ResourceKey="Fill/Neutral/Secondary/Hover" />
     <StaticResource x:Key="ComboBoxEditorMultipleItemSelectedBackground" ResourceKey="Fill/Neutral/Primary/Hover" />
-    <StaticResource x:Key="ComboBoxEditorMultipleItemSelectedBackgroundPointerOver" ResourceKey="Fill/Neutral/Secondary/Enabled" />
-    <StaticResource x:Key="ComboBoxEditorMultipleItemSelectedBackgroundPressed" ResourceKey="Fill/Neutral/Secondary/Hover" />
+    <StaticResource x:Key="ComboBoxEditorMultipleItemSelectedBackgroundPointerOver"
+                    ResourceKey="Fill/Neutral/Secondary/Enabled" />
+    <StaticResource x:Key="ComboBoxEditorMultipleItemSelectedBackgroundPressed"
+                    ResourceKey="Fill/Neutral/Secondary/Hover" />
     <StaticResource x:Key="ComboBoxEditorItemForegroundDisabled" ResourceKey="Text/Neutral/Primary" />
-    <StaticResource x:Key="ComboBoxEditorItemSelectedBackgroundDisabled" ResourceKey="Fill/Accent/Highlighting/Item/Enabled" />
-    <StaticResource x:Key="ComboBoxEditorMultipleItemCheckBoxBackgroundDisabled" ResourceKey="Fill/Neutral/Secondary/Enabled" />
-    <StaticResource x:Key="ComboBoxEditorMultipleItemCheckBoxCheckedBackgroundDisabled" ResourceKey="Fill/Accent/Primary/Enabled" />
+    <StaticResource x:Key="ComboBoxEditorItemSelectedBackgroundDisabled"
+                    ResourceKey="Fill/Accent/Highlighting/Item/Enabled" />
+    <StaticResource x:Key="ComboBoxEditorMultipleItemCheckBoxBackgroundDisabled"
+                    ResourceKey="Fill/Neutral/Secondary/Enabled" />
+    <StaticResource x:Key="ComboBoxEditorMultipleItemCheckBoxCheckedBackgroundDisabled"
+                    ResourceKey="Fill/Accent/Primary/Enabled" />
     <StaticResource x:Key="ComboBoxEditorFocusedBackground" ResourceKey="Fill/Neutral/Secondary/Hover" />
     <StaticResource x:Key="ComboBoxEditorSecondaryFocusedBackground" ResourceKey="Fill/Neutral/Primary/Hover" />
 
@@ -486,10 +497,13 @@
     <StaticResource x:Key="SegmentedEditorItemSelectedBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="SegmentedEditorItemSelectedBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="SegmentedEditorItemSecondarySelectedBackground" ResourceKey="Fill/Neutral/Secondary/Hover" />
-    <StaticResource x:Key="SegmentedEditorItemSecondarySelectedBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
-    <StaticResource x:Key="SegmentedEditorItemSelectedBorderBrushPointerOver" ResourceKey="Outline/Neutral/Transparent/Light" />
+    <StaticResource x:Key="SegmentedEditorItemSecondarySelectedBorderBrush"
+                    ResourceKey="Outline/Neutral/Transparent/Light" />
+    <StaticResource x:Key="SegmentedEditorItemSelectedBorderBrushPointerOver"
+                    ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="SegmentedEditorItemSelectedForegroundPointerOver" ResourceKey="Text/Neutral/Primary" />
-    <StaticResource x:Key="SegmentedEditorItemSelectedBorderBrushPressed" ResourceKey="Outline/Neutral/Transparent/Light" />
+    <StaticResource x:Key="SegmentedEditorItemSelectedBorderBrushPressed"
+                    ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="SegmentedEditorItemSelectedForegroundPressed" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="SegmentedEditorItemSelectedBackgroundDisabled" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="SegmentedEditorItemSelectedForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
@@ -497,7 +511,7 @@
     <StaticResource x:Key="EditorForeground" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="EditorForegroundOnError" ResourceKey="Text/Accent/Error" />
     <StaticResource x:Key="EditorSelectionBrushOnError" ResourceKey="Text/Neutral/Primary" />
-    
+
     <StaticResource x:Key="TextEditorBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="TextEditorSecondaryBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="TextEditorBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
@@ -529,9 +543,10 @@
     <StaticResource x:Key="IconButtonCheckedBackgroundDisabled" ResourceKey="Fill/Neutral/Secondary/Disabled" />
     <StaticResource x:Key="IconButtonCheckedForegroundDisabled" ResourceKey="Icons/Outline/Disabled" />
     <StaticResource x:Key="IconButtonSecondaryCheckedBackgroundDisabled" ResourceKey="Fill/Neutral/Primary/Disabled" />
-    <StaticResource x:Key="IconButtonSecondaryCheckedBorderBrushDisabled" ResourceKey="Outline/Neutral/Transparent/Light" />
+    <StaticResource x:Key="IconButtonSecondaryCheckedBorderBrushDisabled"
+                    ResourceKey="Outline/Neutral/Transparent/Light" />
 
-    <!-- Resources for Window-based classes -->   
+    <!-- Resources for Window-based classes -->
     <StaticResource x:Key="NativeWindowBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
-    
+
 </ResourceDictionary>
