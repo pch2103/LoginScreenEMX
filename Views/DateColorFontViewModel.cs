@@ -3,8 +3,11 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Avalonia.Media;
+using CommunityToolkit.Mvvm.ComponentModel;
+using LoginScreenEMX.Helpers;
 
 namespace LoginScreenEMX;
+
 
 public class DateColorFontViewModel : INotifyPropertyChanged
 {
@@ -15,6 +18,12 @@ public class DateColorFontViewModel : INotifyPropertyChanged
         Colors.Green
     };
     
+    public FontTag SelectedFont { get; set; } = new FontTag
+    {
+        FontFamily   = "Arial",
+        FontStyleName = "Обычный",
+        FontSize     = 14
+    };
 
     public event PropertyChangedEventHandler? PropertyChanged;
 

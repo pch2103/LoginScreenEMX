@@ -1,13 +1,7 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:LoginScreenEMX.Views"
-             xmlns:vm="using:LoginScreenEMX.ViewModels"
-             xmlns:sys="using:System"
-             xmlns:col="using:System.Collections"
+             xmlns:helpers="clr-namespace:LoginScreenEMX.Helpers"
              xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
-             xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
              xmlns:loginScreenEmx="clr-namespace:LoginScreenEMX"
              Width="600"
              MinHeight="400"
@@ -89,6 +83,21 @@
                                                   Color="{StaticResource ThemePrimaryColor}"
                                                   ColorsShowMode="StandardColors,CustomColors"
                                                   CustomColors="{Binding MyCustomColors}"/>
+                        </StackPanel>
+                        <StackPanel x:Name="FontBlock" Spacing="{StaticResource ThemeSize-Min}" IsVisible="True"
+                                    Orientation="Vertical"
+                                    VerticalAlignment="Top">
+                            <TextBlock Text="Font Style:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                            <mxe:PopupEditor x:Name="fontEditor"
+                                             Classes="Medium"
+                                             CornerRadius="{StaticResource DefaultCornerRadius}"
+                                             Theme="{StaticResource FontEditorTheme}"
+                                             Width="180"
+                                             Tag="{Binding SelectedFont}"
+                                             EditorValue="{Binding SelectedFont.DisplayText}">
+                            </mxe:PopupEditor>
                         </StackPanel>
                     </StackPanel>
                 </Grid>

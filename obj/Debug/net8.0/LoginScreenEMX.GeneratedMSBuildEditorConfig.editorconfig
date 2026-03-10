@@ -22,6 +22,9 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 [C:/Users/CheP/RiderProjects/LoginScreenEMX/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/CheP/RiderProjects/LoginScreenEMX/Resources/FontEditorTheme.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/CheP/RiderProjects/LoginScreenEMX/Resources/ModifiedResources.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

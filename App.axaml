@@ -20,6 +20,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="/Resources/ModifiedResourcesColor.axaml" />
                 <ResourceInclude Source="/Resources/ModifiedResources.axaml" />
+                <ResourceInclude Source="/Resources/FontEditorTheme.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources> 

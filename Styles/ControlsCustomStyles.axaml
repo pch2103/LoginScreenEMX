@@ -71,7 +71,7 @@
         </Style>
     </Style>
     
-    <Style Selector="mxe|DateEditor.Medium, mxe|PopupColorEditor.Medium">
+    <Style Selector="mxe|DateEditor.Medium, mxe|PopupEditor, mxe|PopupColorEditor.Medium">
         <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />

@@ -1,0 +1,137 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
+                    xmlns:mxev="clr-namespace:Eremex.AvaloniaUI.Controls.Editors.Visuals;assembly=Eremex.Avalonia.Controls"
+                    xmlns:local="clr-namespace:LoginScreenEMX.Helpers">
+
+    <ControlTheme x:Key="FontEditorTheme" TargetType="mxe:PopupEditor"
+                  BasedOn="{StaticResource {x:Type mxe:PopupEditor}}">
+
+        <Setter Property="CornerRadius" Value="2"/>
+
+        <Style Selector="^:activeMode">
+            <Style Selector="^ /template/ Border#PopupBorder">
+                <Setter Property="CornerRadius" Value="4"/>
+                <Setter Property="Width" Value="320"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource ThemeBackgroundColor-700}"/>
+            </Style>
+
+            <Setter Property="PopupContent">
+                <Setter.Value>
+                    <Template x:CompileBindings="False">
+                        <Border BorderThickness="0,1,0,0"
+                                BorderBrush="{DynamicResource ThemeBackgroundColor-700}"
+                                Padding="0,8,0,2"
+                                MaxWidth="320">  
+                            
+                            <StackPanel Spacing="8" Margin="12,4">
+
+                                <!-- Шрифт -->
+                                <StackPanel Spacing="2">
+                                    <TextBlock Text="Шрифт"
+                                               Classes="One-Subs-Regular"/>
+                                    <mxe:ComboBoxEditor
+                                        Classes="Medium"
+                                        EditorValue="{Binding $parent[mxe:PopupEditor].Tag.FontFamily}"
+                                        ItemsSource="{Binding Source={x:Static local:FontHelper.SystemFonts}}">
+                                        <mxe:ComboBoxEditor.ItemTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding}" FontFamily="{Binding}"/>
+                                            </DataTemplate>
+                                        </mxe:ComboBoxEditor.ItemTemplate>
+                                    </mxe:ComboBoxEditor>
+                                </StackPanel>
+
+                                <!-- Начертание + Размер -->
+                                <Grid ColumnDefinitions="*, 8, 80">
+                                    <StackPanel Spacing="2">
+                                        <TextBlock Text="Начертание"
+                                                   Classes="One-Subs-Regular"/>
+                                        <mxe:ComboBoxEditor
+                                            Classes="Medium"
+                                            EditorValue="{Binding $parent[mxe:PopupEditor].Tag.FontStyleName}"
+                                            ItemsSource="{Binding Source={x:Static local:FontHelper.FontStyles}}"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="2" Spacing="2">
+                                        <TextBlock Text="Размер"
+                                                   Classes="One-Subs-Regular"/>
+                                        <mxe:SpinEditor
+                                            Classes="Medium"
+                                            Mask="##0"
+                                            Minimum="6"
+                                            Maximum="288"
+                                            Increment="1"
+                                            EditorValue="{Binding $parent[mxe:PopupEditor].Tag.FontSize}"/>
+                                    </StackPanel>
+                                </Grid>
+
+                                <!-- Эффекты -->
+                                <StackPanel Spacing="2">
+                                    <TextBlock Text="Эффекты"
+                                               Classes="One-Subs-Regular"/>
+                                    <StackPanel Orientation="Horizontal" Spacing="16">
+                                        <mxe:CheckEditor Content="Зачёркнутый"
+                                                         Classes="Medium"
+                                                         IsChecked="{Binding $parent[mxe:PopupEditor].Tag.IsStrikethrough}"/>
+                                        <mxe:CheckEditor Content="Подчёркнутый"
+                                                         Classes="Medium"
+                                                         IsChecked="{Binding $parent[mxe:PopupEditor].Tag.IsUnderline}"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <!-- Набор символов -->
+                                <StackPanel Spacing="2">
+                                    <TextBlock Text="Набор символов"
+                                               Classes="One-Subs-Regular"/>
+                                    <mxe:ComboBoxEditor
+                                        Classes="Medium"
+                                        EditorValue="{Binding $parent[mxe:PopupEditor].Tag.CharacterSet}"
+                                        ItemsSource="{Binding Source={x:Static local:FontHelper.CharacterSets}}"/>
+                                </StackPanel>
+
+                                <!-- Превью -->
+                                <Border Background="{DynamicResource Fill/Neutral/Secondary/Enabled}"
+                                        BorderBrush="{DynamicResource ThemeBackgroundColor-600}"
+                                        BorderThickness="1"
+                                        CornerRadius="4"
+                                        Padding="12"
+                                        MinHeight="48">
+                                    <TextBlock
+                                        Text="Пример текста AaBbCc 123"
+                                        FontFamily="{Binding $parent[mxe:PopupEditor].Tag.FontFamily}"
+                                        FontSize="{Binding $parent[mxe:PopupEditor].Tag.FontSize}"
+                                        FontStyle="{Binding $parent[mxe:PopupEditor].Tag.Style}"
+                                        FontWeight="{Binding $parent[mxe:PopupEditor].Tag.Weight}"
+                                        TextDecorations="{Binding $parent[mxe:PopupEditor].Tag.TextDecorations}"
+                                        TextWrapping="Wrap"/>
+                                </Border>
+
+                                <!-- Кнопки -->
+                                <Grid ColumnDefinitions="*, 8, *" Margin="0,0,0,6">
+                                    <Button Content="Применить"
+                                            Classes="Primary Medium"
+                                            HorizontalAlignment="Stretch"
+                                            Command="{Binding $parent[mxe:PopupEditor].ClosePopupCommand}">
+                                        <Button.CommandParameter>
+                                            <mxe:PopupCloseMode>Apply</mxe:PopupCloseMode>
+                                        </Button.CommandParameter>
+                                    </Button>
+                                    <Button Grid.Column="2"
+                                            Content="Отмена"
+                                            Classes="Secondary Medium"
+                                            HorizontalAlignment="Stretch"
+                                            Command="{Binding $parent[mxe:PopupEditor].ClosePopupCommand}">
+                                        <Button.CommandParameter>
+                                            <mxe:PopupCloseMode>Cancel</mxe:PopupCloseMode>
+                                        </Button.CommandParameter>
+                                    </Button>
+                                </Grid>
+
+                            </StackPanel>
+                        </Border>
+                    </Template>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ControlTheme>
+</ResourceDictionary>
