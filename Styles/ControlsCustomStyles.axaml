@@ -7,10 +7,7 @@
     <Style Selector="TextBlock:disabled">
         <Setter Property="Foreground" Value="{DynamicResource BackgroundColor-500}" />
     </Style>
-    <Style Selector="mxe|DateEditor CalendarItem /template/ Border#PART_HeaderDecorationBorder">
-        <Setter Property="BorderBrush" Value="Red" />
-        <Setter Property="BorderThickness" Value="0,1,0,1" />
-    </Style>
+
     <!-- Скругление для выбранной даты календаря mxe|DateEditor -->
     <Style Selector="CalendarDayButton:selected /template/ Border#PART_BackgroundBorder">
         <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
@@ -73,7 +70,8 @@
             </Setter>
         </Style>
     </Style>
-    <Style Selector="mxe|DateEditor.Medium">
+    
+    <Style Selector="mxe|DateEditor.Medium, mxe|PopupColorEditor.Medium">
         <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />

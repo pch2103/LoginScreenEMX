@@ -55,21 +55,42 @@
                 <!-- Фон для блока контента -->
                 <Border Classes="content-background" />
                 <!-- Функционал -->
+
                 <Grid ColumnDefinitions="Auto *" Margin="{StaticResource ThemePadding-Medium}">
                     <!-- (/Resources/ModifiedResources.axaml) Кастомизация календаря - добавление возможности ввода времени -->
-                    <StackPanel Orientation="Horizontal" Spacing="8">
-                        <mxe:DateEditor x:Name="MyDateEditor"
-                                        StaysPopupOpen="True"
-                                        MaskType="DateTime"
-                                        Mask="dd.MM.yyyy  HH:mm:ss"
-                                        DisplayFormatString="dd.MM.yyyy  HH:mm:ss"
-                                        Width="160"
-                                        Classes="Medium"
-                                        DateTime="{Binding SelectedDateTime}"
-                                        Tag="{Binding}">
-                        </mxe:DateEditor>
-                    </StackPanel>
 
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <!-- DateEditor -->
+                        <StackPanel x:Name="DateBlock" Spacing="{StaticResource ThemeSize-Min}" IsVisible="True"
+                                    Orientation="Vertical"
+                                    VerticalAlignment="Top">
+                            <TextBlock Text="Date and Time Selector:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                            <mxe:DateEditor x:Name="MyDateEditor"
+                                            StaysPopupOpen="True"
+                                            MaskType="DateTime"
+                                            Mask="dd.MM.yyyy  HH:mm:ss"
+                                            DisplayFormatString="dd.MM.yyyy  HH:mm:ss"
+                                            Width="160"
+                                            Classes="Medium"
+                                            DateTime="{Binding SelectedDateTime}"
+                                            Tag="{Binding}">
+                            </mxe:DateEditor>
+                        </StackPanel>
+                        <StackPanel x:Name="ColorBlock" Spacing="{StaticResource ThemeSize-Min}" IsVisible="True"
+                                    Orientation="Vertical"
+                                    VerticalAlignment="Top">
+                            <TextBlock Text="Color Picker:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                            <mxe:PopupColorEditor Classes="Medium" 
+                                                  Name="popupColorEditor1" 
+                                                  Color="{StaticResource ThemePrimaryColor}"
+                                                  ColorsShowMode="StandardColors,CustomColors"
+                                                  CustomColors="{Binding MyCustomColors}"/>
+                        </StackPanel>
+                    </StackPanel>
                 </Grid>
             </Grid>
         </Border>

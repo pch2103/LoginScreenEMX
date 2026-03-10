@@ -22,7 +22,7 @@
     <StaticResource x:Key="ButtonAccentBorderBrush" ResourceKey="TransparentBrush" />
     <StaticResource x:Key="ButtonAccentBackgroundPointerOver" ResourceKey="Fill/Accent/Primary/Hover" />
     <StaticResource x:Key="ButtonAccentForegroundPointerOver" ResourceKey="Text/On Accent/Primary" />
-    <StaticResource x:Key="ButtonAccentBackgroundPressed" ResourceKey="" />
+    <StaticResource x:Key="ButtonAccentBackgroundPressed" ResourceKey="Fill/Neutral/Primary/Pressed" />
     <StaticResource x:Key="ButtonAccentForegroundPressed" ResourceKey="Text/On Accent/Primary" />
     <StaticResource x:Key="ButtonAccentBackgroundDisabled" ResourceKey="Fill/Accent/Primary/Disabled" />
     <StaticResource x:Key="ButtonAccentForegroundDisabled" ResourceKey="Text/Neutral/Disabled" />
@@ -428,21 +428,21 @@
     <StaticResource x:Key="ColorEditorHeaderBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="ColorEditorHeaderBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="ColorEditorPickerHeaderForeground" ResourceKey="Text/Neutral/Primary" />
-    <StaticResource x:Key="ColorEditorFooterBackground" ResourceKey="Fill/Neutral/Primary/Pressed" />
+    <StaticResource x:Key="ColorEditorFooterBackground" ResourceKey="Fill/Neutral/Secondary/Enabled" />
     <StaticResource x:Key="ColorEditorFooterBorderBrush" ResourceKey="Outline/Neutral/Transparent/Light" />
     <StaticResource x:Key="ColorEditorMoreColorsButtonBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
     <StaticResource x:Key="ColorEditorMoreColorsButtonForeground" ResourceKey="Icons/Outline/Gray" />
-    <StaticResource x:Key="ColorEditorMoreColorsButtonBorderBrush" ResourceKey="Outline/Neutral/On Primary/Strong" />
+    <StaticResource x:Key="ColorEditorMoreColorsButtonBorderBrush" ResourceKey="Outline/Neutral/Transparent/Strong" />
     <StaticResource x:Key="ColorEditorMoreColorsButtonBackgroundPointerOver" ResourceKey="Fill/Neutral/Primary/Hover" />
     <StaticResource x:Key="ColorEditorMoreColorsButtonBackgroundPressed" ResourceKey="Fill/Neutral/Primary/Pressed" />
     <StaticResource x:Key="ColorEditorToggleButtonBorderBrush" ResourceKey="Outline/Neutral/Transparent/Strong" />
     <StaticResource x:Key="ColorEditorBackground" ResourceKey="Fill/Neutral/Primary/Enabled" />
-    <StaticResource x:Key="ColorEditorBorderBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
-    <StaticResource x:Key="ColorEditorSplitterBrush" ResourceKey="Outline/Neutral/Transparent/Medium" />
+    <StaticResource x:Key="ColorEditorBorderBrush" ResourceKey="Outline/Neutral/Transparent/Strong" />
+    <StaticResource x:Key="ColorEditorSplitterBrush" ResourceKey="Outline/Neutral/Transparent/Strong" />
     <StaticResource x:Key="ColorEditorStandardColorsHeaderForeground" ResourceKey="Text/Neutral/Secondary" />
     <StaticResource x:Key="ColorEditorMoreColorsHeaderForeground" ResourceKey="Text/Neutral/Secondary" />
     <StaticResource x:Key="ColorEditorPlatformColorIndicatorBorderBrush"
-                    ResourceKey="Outline/Neutral/Transparent/Medium" />
+                    ResourceKey="Outline/Neutral/Transparent/Strong" />
     <StaticResource x:Key="ColorEditorPlatformColorItemForegroundDisabled" ResourceKey="Text/Neutral/Primary" />
     <StaticResource x:Key="ColorEditorSelectedPlatformColorItemBackgroundDisabled"
                     ResourceKey="Fill/Accent/Highlighting/Item/Enabled" />
@@ -463,10 +463,10 @@
     <StaticResource x:Key="ColorPickerControlThumbInnerStrokeDisabled" ResourceKey="TransparentBrush" />
 
     <StaticResource x:Key="PopupColorEditorColorIndicatorBorderBrush" ResourceKey="Outline/Neutral/Transparent/Strong" />
-    <StaticResource x:Key="PopupColorEditorBackgroundPointerOver" ResourceKey="Fill/Neutral/Secondary/Hover" />
+    <StaticResource x:Key="PopupColorEditorBackgroundPointerOver" ResourceKey="Fill/Neutral/Primary/Hover" />
     <StaticResource x:Key="PopupColorEditorSecondaryBackgroundPointerOver" ResourceKey="Fill/Neutral/Primary/Hover" />
     <StaticResource x:Key="PopupColorEditorSecondaryBorderBrushPointerOver"
-                    ResourceKey="Outline/Neutral/Transparent/Light" />
+                    ResourceKey="Fill/Neutral/Primary/Hover" />
 
     <StaticResource x:Key="ComboBoxEditorMultipleItemBackgroundPointerOver"
                     ResourceKey="Fill/Neutral/Secondary/Enabled" />

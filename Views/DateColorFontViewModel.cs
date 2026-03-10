@@ -1,11 +1,21 @@
 using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Avalonia.Media;
 
 namespace LoginScreenEMX;
 
 public class DateColorFontViewModel : INotifyPropertyChanged
 {
+    public ObservableCollection<Color> MyCustomColors { get; set; } = new()
+    {
+        Colors.Red,
+        Colors.Blue,
+        Colors.Green
+    };
+    
+
     public event PropertyChangedEventHandler? PropertyChanged;
 
     private void OnPropertyChanged([CallerMemberName] string? name = null)
