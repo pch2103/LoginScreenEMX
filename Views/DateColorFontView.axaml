@@ -62,11 +62,10 @@
                                        VerticalAlignment="Center"
                                        Classes="One-Subs-Regular" />
                             <mxe:DateEditor x:Name="MyDateEditor"
-                                            StaysPopupOpen="True"
                                             MaskType="DateTime"
                                             Mask="dd.MM.yyyy  HH:mm:ss"
                                             DisplayFormatString="dd.MM.yyyy  HH:mm:ss"
-                                            Width="160"
+                                            Width="180"
                                             Classes="Medium"
                                             DateTime="{Binding SelectedDateTime}"
                                             Tag="{Binding}">
@@ -78,8 +77,9 @@
                             <TextBlock Text="Color Picker:"
                                        VerticalAlignment="Center"
                                        Classes="One-Subs-Regular" />
-                            <mxe:PopupColorEditor Classes="Medium" 
+                            <mxe:PopupColorEditor Classes="Medium Chevron" 
                                                   Name="popupColorEditor1" 
+                                                  Width="180"
                                                   Color="{StaticResource ThemePrimaryColor}"
                                                   ColorsShowMode="StandardColors,CustomColors"
                                                   CustomColors="{Binding MyCustomColors}"/>
@@ -91,7 +91,7 @@
                                        VerticalAlignment="Center"
                                        Classes="One-Subs-Regular" />
                             <mxe:PopupEditor x:Name="fontEditor"
-                                             Classes="Medium"
+                                             Classes="Medium FontIcon"
                                              CornerRadius="{StaticResource DefaultCornerRadius}"
                                              Theme="{StaticResource FontEditorTheme}"
                                              Width="180"

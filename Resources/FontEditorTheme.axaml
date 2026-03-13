@@ -12,7 +12,7 @@
         <Style Selector="^:activeMode">
             <Style Selector="^ /template/ Border#PopupBorder">
                 <Setter Property="CornerRadius" Value="4"/>
-                <Setter Property="Width" Value="320"/>
+                <Setter Property="Width" Value="280"/>
                 <Setter Property="BorderBrush" Value="{DynamicResource ThemeBackgroundColor-700}"/>
             </Style>
 
@@ -21,17 +21,17 @@
                     <Template x:CompileBindings="False">
                         <Border BorderThickness="0,1,0,0"
                                 BorderBrush="{DynamicResource ThemeBackgroundColor-700}"
-                                Padding="0,8,0,2"
-                                MaxWidth="320">  
+                                Padding="0,8,0,0"
+                                MaxWidth="280">  
                             
-                            <StackPanel Spacing="8" Margin="12,4">
+                            <StackPanel Spacing="8" Margin="8, 4,8,0">
 
                                 <!-- Шрифт -->
                                 <StackPanel Spacing="2">
                                     <TextBlock Text="Шрифт"
                                                Classes="One-Subs-Regular"/>
                                     <mxe:ComboBoxEditor
-                                        Classes="Medium"
+                                        Classes="Medium Chevron"
                                         EditorValue="{Binding $parent[mxe:PopupEditor].Tag.FontFamily}"
                                         ItemsSource="{Binding Source={x:Static local:FontHelper.SystemFonts}}">
                                         <mxe:ComboBoxEditor.ItemTemplate>
@@ -43,12 +43,12 @@
                                 </StackPanel>
 
                                 <!-- Начертание + Размер -->
-                                <Grid ColumnDefinitions="*, 8, 80">
+                                <Grid ColumnDefinitions="*, 8, 60">
                                     <StackPanel Spacing="2">
                                         <TextBlock Text="Начертание"
                                                    Classes="One-Subs-Regular"/>
                                         <mxe:ComboBoxEditor
-                                            Classes="Medium"
+                                            Classes="Medium Chevron"
                                             EditorValue="{Binding $parent[mxe:PopupEditor].Tag.FontStyleName}"
                                             ItemsSource="{Binding Source={x:Static local:FontHelper.FontStyles}}"/>
                                     </StackPanel>
@@ -84,7 +84,7 @@
                                     <TextBlock Text="Набор символов"
                                                Classes="One-Subs-Regular"/>
                                     <mxe:ComboBoxEditor
-                                        Classes="Medium"
+                                        Classes="Medium Chevron"
                                         EditorValue="{Binding $parent[mxe:PopupEditor].Tag.CharacterSet}"
                                         ItemsSource="{Binding Source={x:Static local:FontHelper.CharacterSets}}"/>
                                 </StackPanel>
@@ -107,7 +107,7 @@
                                 </Border>
 
                                 <!-- Кнопки -->
-                                <Grid ColumnDefinitions="*, 8, *" Margin="0,0,0,6">
+                                <Grid ColumnDefinitions="*, 8, *" Margin="0,0,0,8">
                                     <Button Content="Применить"
                                             Classes="Primary Medium"
                                             HorizontalAlignment="Stretch"

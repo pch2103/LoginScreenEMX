@@ -12,10 +12,9 @@
     <Style Selector="CalendarDayButton:selected /template/ Border#PART_BackgroundBorder">
         <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
     </Style>
-    
-    
-    <!-- mxe|DateEditor -->
-    <Style Selector="mxe|DateEditor">
+
+    <!-- mxe|DateEditor - смена иконки для выпадайки на иконку календаря -->
+    <Style Selector="mxe|DateEditor, mxe|PopupEditor">
         <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
@@ -70,21 +69,137 @@
             </Setter>
         </Style>
     </Style>
+
+    <!-- mxe|PopupEditor.FontIcon - смена иконки для выпадайки на иконку Шрифта -->
+    <Style Selector="mxe|PopupEditor.FontIcon">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <!--Замена стандарной иконки стрелки вниз на нашу-->
+        <Style Selector="^ mxev|EditorIconToggleButton#PART_PopupOpenButton">
+            <Setter Property="Theme">
+                <ControlTheme TargetType="mxev:EditorIconToggleButton">
+                    <Setter Property="Template">
+                        <ControlTemplate>
+                            <Border x:Name="PART_Border"
+                                    CornerRadius="{StaticResource DefaultCornerRadius}"
+                                    Background="Transparent"
+                                    Padding="6, 4 , 6, 4"
+                                    VerticalAlignment="Stretch">
+                                <Path x:Name="PART_Icon"
+                                      Data="{StaticResource FontIcon}"
+                                      Fill="{DynamicResource CalendarButtonForeground}"
+                                      Stretch="Uniform"
+                                      Width="16" Height="16"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center" />
+                            </Border>
+
+                        </ControlTemplate>
+                    </Setter>
+
+                    <Style Selector="^:pointerover /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundColor-400}" />
+                    </Style>
+                    <Style Selector="^:pointerover /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundPointerOver}" />
+                    </Style>
+
+                    <Style Selector="^:pressed /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundPressed}" />
+                    </Style>
+                    <Style Selector="^:pressed /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundPressed}" />
+                    </Style>
+
+                    <Style Selector="^:checked /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource CalendarButtonSelectedBackground}" />
+                    </Style>
+                    <Style Selector="^:checked /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonSelectedForeground}" />
+                    </Style>
+
+                    <Style Selector="^:disabled /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundDisabled}" />
+                        <Setter Property="Opacity" Value="0.5" />
+                    </Style>
+                </ControlTheme>
+            </Setter>
+        </Style>
+    </Style>
     
-    <Style Selector="mxe|DateEditor.Medium, mxe|PopupEditor, mxe|PopupColorEditor.Medium">
+   <!-- mxe|PopupEditor.Chevron - смена иконки стрелки вниз -->
+    <Style Selector="mxe|ComboBoxEditor.Chevron, mxe|PopupColorEditor.Chevron">
+        <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
+        <Setter Property="FontFamily" Value="DefaultFont" />
+        <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
+        <!--Замена стандарной иконки стрелки вниз на нашу-->
+        <Style Selector="^ mxev|EditorIconToggleButton#PART_PopupOpenButton">
+            <Setter Property="Theme">
+                <ControlTheme TargetType="mxev:EditorIconToggleButton">
+                    <Setter Property="Template">
+                        <ControlTemplate>
+                            <Border x:Name="PART_Border"
+                                    CornerRadius="{StaticResource DefaultCornerRadius}"
+                                    Background="Transparent"
+                                    Padding="8, 6, 8, 0"
+                                    VerticalAlignment="Stretch">
+                                <Path x:Name="PART_Icon"
+                                      Data="{StaticResource ChevronIcon}"
+                                      Fill="{DynamicResource CalendarButtonForeground}"
+                                      Stretch="Uniform"
+                                      Width="9" Height="9"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center" />
+                            </Border>
+
+                        </ControlTemplate>
+                    </Setter>
+
+                    <Style Selector="^:pointerover /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundColor-400}" />
+                    </Style>
+                    <Style Selector="^:pointerover /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundPointerOver}" />
+                    </Style>
+
+                    <Style Selector="^:pressed /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource CalendarButtonBackgroundPressed}" />
+                    </Style>
+                    <Style Selector="^:pressed /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundPressed}" />
+                    </Style>
+
+                    <Style Selector="^:checked /template/ Border#PART_Border">
+                        <Setter Property="Background" Value="{DynamicResource CalendarButtonSelectedBackground}" />
+                    </Style>
+                    <Style Selector="^:checked /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonSelectedForeground}" />
+                    </Style>
+
+                    <Style Selector="^:disabled /template/ Path#PART_Icon">
+                        <Setter Property="Fill" Value="{DynamicResource CalendarButtonForegroundDisabled}" />
+                        <Setter Property="Opacity" Value="0.5" />
+                    </Style>
+                </ControlTheme>
+            </Setter>
+        </Style>
+    </Style>
+    
+    <Style Selector="mxe|DateEditor.Medium, mxe|PopupEditor.Medium, mxe|PopupColorEditor.Medium">
         <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Regular}" />
     </Style>
-    
-    <Style Selector="mxe|DateEditor.Large">
+
+    <Style Selector="mxe|DateEditor.Large, mxe|PopupEditor.Large, mxe|PopupColorEditor.Large">
         <Setter Property="CornerRadius" Value="{StaticResource LargeCornerRadius}" />
         <Setter Property="FontFamily" Value="DefaultFont" />
         <Setter Property="FontSize" Value="{StaticResource ThemeSize-Medium}" />
     </Style>
-    
+
     <!--mxe|TextEditor mxe|ComboBoxEditor mxe|SpinEditor-->
-    
+
     <Style Selector="mxe|TextEditor.Medium, mxe|ComboBoxEditor.Medium, mxe|SpinEditor.Medium">
         <Setter Property="Height" Value="{StaticResource ThemeSize-Double}" />
         <Setter Property="CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
@@ -95,6 +210,14 @@
             <!-- размер текста в выпадайке -->
             <x:Double x:Key="ControlContentThemeFontSize">12</x:Double>
         </Style.Resources>
+    </Style>
+    
+    <Style Selector="mxe|SpinEditor /template/ RepeatButton#PART_IncreaseButton">
+        <Setter Property="CornerRadius" Value="0,0,0,0"/>  <!-- Верхняя кнопка -->
+    </Style>
+
+    <Style Selector="mxe|SpinEditor /template/ RepeatButton#PART_DecreaseButton">
+        <Setter Property="CornerRadius" Value="0,0,0,0"/>  <!-- Нижняя кнопка -->
     </Style>
 
     <Style Selector="mxdg|DataGridControl.Large">

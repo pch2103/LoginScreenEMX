@@ -87,7 +87,7 @@
                 <ControlTemplate x:CompileBindings="False">
                     <Border BorderThickness="0,1,0,0"
                             BorderBrush="{DynamicResource ThemeBackgroundColor-700}"
-                            Padding="0, 8, 0 ,2">
+                            Padding="0, 8, 0 ,0">
                         <StackPanel Spacing="8">
                             <Grid ColumnDefinitions="Auto * Auto * Auto *"
                                   HorizontalAlignment="Center">
@@ -124,7 +124,7 @@
                                                 Maximum="59"
                                                 Increment="1" />
                             </Grid>
-                            <Grid ColumnDefinitions="* *" Margin="4">
+                            <Grid ColumnDefinitions="* *" Margin="8">
                                 <Button Content="Apply"
                                         Classes="Primary Medium"
                                         HorizontalAlignment="Stretch"
@@ -575,5 +575,4 @@
         </Style>
     </ControlTheme>
     
-
 </ResourceDictionary>
