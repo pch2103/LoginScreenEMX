@@ -3,7 +3,7 @@
              xmlns:helpers="clr-namespace:LoginScreenEMX.Helpers"
              xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
              xmlns:loginScreenEmx="clr-namespace:LoginScreenEMX"
-             Width="600"
+             MinWidth="600"
              MinHeight="400"
              x:Class="LoginScreenEMX.Views.DateColorFontView"
              x:DataType="loginScreenEmx:DateColorFontViewModel">
@@ -95,10 +95,23 @@
                                              CornerRadius="{StaticResource DefaultCornerRadius}"
                                              Theme="{StaticResource FontEditorTheme}"
                                              Width="180"
+                                             Height="24"
                                              Tag="{Binding SelectedFont}"
                                              EditorValue="{Binding SelectedFont.DisplayText}">
                             </mxe:PopupEditor>
                         </StackPanel>
+                        
+                        <StackPanel Spacing="{StaticResource ThemeSize-Min}" 
+                                    Orientation="Vertical"
+                                    VerticalAlignment="Top">
+                            <TextBlock Text="Dialog Sample:"
+                                       VerticalAlignment="Center"
+                                       Classes="One-Subs-Regular" />
+                            <Button Content="Show Dialog"
+                                    Classes="Primary Medium"
+                                    Click="ShowCustomDialog_Click"/>
+                        </StackPanel>
+                        
                     </StackPanel>
                 </Grid>
             </Grid>

@@ -5,6 +5,8 @@
       <map>
         <entry key="App.axaml" value="LoginScreenEMX.csproj" />
         <entry key="MyItemList.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Resources/CustomDialogEditor.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Resources/FontEditorTheme.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Resources/ModifiedResources.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Resources/ModifiedResourcesColor.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Resources/ModifiedStyles.axaml" value="LoginScreenEMX.csproj" />
@@ -16,6 +18,7 @@
         <entry key="Views/ChangeUsernameAndPasswordView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ConnectToServerView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ConnectionLostView.axaml" value="LoginScreenEMX.csproj" />
+        <entry key="Views/CustomDialog.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/DateColorFontView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/ErrorBlockView.axaml" value="LoginScreenEMX.csproj" />
         <entry key="Views/InfoBlockView.axaml" value="LoginScreenEMX.csproj" />

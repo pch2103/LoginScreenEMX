@@ -1,0 +1,120 @@
+<mx:MxWindow xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
+             xmlns:views="clr-namespace:LoginScreenEMX.Views"
+             x:Class="LoginScreenEMX.Views.CustomDialog"
+             SizeToContent="WidthAndHeight"
+             Classes="no-titlebar"
+             CanResize="False"
+             WindowStartupLocation="CenterOwner"
+             SystemDecorations="None"
+             Background="Transparent"
+             TransparencyLevelHint="Transparent">
+
+    <Border Background="{DynamicResource BackgroundColor-800}"
+            MaxWidth="480"
+            BorderThickness="1"
+            BorderBrush="{DynamicResource BackgroundColor-600}"
+            CornerRadius="{StaticResource LargeCornerRadius}"
+            Margin=" 0 8 0 0 "
+            Padding="8 4 8 8 "
+            BoxShadow="0 4 20 0 #40000000">
+        <Grid RowDefinitions="Auto, *,Auto,Auto">
+            <!-- 1. Заголовок-->
+            <Border Grid.Row="0"
+                    Margin="{StaticResource ThemePaddingDown-Medium}"
+                    Height="{StaticResource ThemeSize-Large}">
+                <Grid ColumnDefinitions="Auto, *,Auto" VerticalAlignment="Center">
+                    <!-- Область для перетаскивания -->
+                    <Border Grid.Column="0" Background="Transparent" Margin="0 0 6 0"
+                            VerticalAlignment="Center">
+                        <Path Data="{StaticResource ErrorIcon}"
+                              Width="{StaticResource ThemeSize-Medium}"
+                              Height="{StaticResource ThemeSize-Medium}"
+                              Stretch="Uniform"
+                              Stroke="Transparent"
+                              Fill="{StaticResource ForegroundColor}" />
+                    </Border>
+                    <Border Grid.Column="1" Background="Transparent" PointerPressed="TitleBar_PointerPressed">
+                        <TextBlock Text="Нарушена целостность системы"
+                                   VerticalAlignment="Center"
+                                   Classes="ONE-Pararaph-Bold" />
+                    </Border>
+                    <!-- Кнопки управления окном -->
+                    <StackPanel Grid.Column="2" Orientation="Horizontal">
+                        <Button Classes="Subtle IconOnlyMedium" Click="CancelButton_Click"
+                                VerticalAlignment="Center">
+                            <Path Data="{StaticResource CloseIcon}"
+                                  Width="{StaticResource ThemeSize-Regular}"
+                                  Height="{StaticResource ThemeSize-Regular}"
+                                  Stretch="Uniform"
+                                  Stroke="Transparent"
+                                  Fill="{StaticResource ForegroundColor}" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- 3. Контент -->
+            <Border Grid.Row="1" Margin="{StaticResource ThemePaddingDown-Medium}">
+                <Grid>
+                    <!-- Фон для блока контента -->
+                    <Border Classes="content-background" />
+                    <!-- Функционал -->
+                    <Grid ColumnDefinitions="Auto *" Margin="{StaticResource ThemePadding-Medium}">
+                        <Grid Grid.Column="0" VerticalAlignment="Top">
+                            <Path Data="{StaticResource ErrorIcon}"
+                                  Width="{StaticResource ThemeSize-Large}"
+                                  Height="{StaticResource ThemeSize-Large}"
+                                  Stretch="Uniform"
+                                  Stroke="Transparent"
+                                  Fill="{StaticResource RedColor}" />
+                        </Grid>
+                        <Grid Grid.Column="1" Margin="12 0 0 0 " RowDefinitions="Auto Auto Auto Auto"
+                              VerticalAlignment="Top">
+                            <TextBlock Text="Нарушена целостность системы.&#x0a;Детали:"
+                                       Foreground="{StaticResource RedColor}"
+                                       VerticalAlignment="Top"
+                                       Margin="{StaticResource ThemePaddingDown-Half}"
+                                       Classes="ONE-H3-Bold" />
+                            <TextBlock Grid.Row="1"
+                                       TextWrapping="Wrap"
+                                       VerticalAlignment="Top"
+                                       Classes="ONE-Pararaph-Regular">
+                                <Run Text="Статус клиента:" FontWeight="Bold"/>
+                                <Run Text=" проверен"/>
+                                <LineBreak/>
+                                <Run Text="Статус сервера LOAD002:" FontWeight="Bold"/>
+                                <Run Text=" проверен"/>
+                            </TextBlock>
+                            
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+            <!-- 5. Нижние кнопки -->
+            <Border Grid.Row="2">
+                <Grid ColumnDefinitions="* Auto">
+                    <Button Classes="Primary Medium" Click="OkButton_Click">
+                        <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
+                            <Path Data="{StaticResource ListViewIcon}"
+                                  VerticalAlignment="Center"
+                                  Stretch="Uniform"
+                                  Width="{StaticResource ThemeSize-Subs}"
+                                  Height="{StaticResource ThemeSize-Subs}"
+                                  Stroke="Transparent"
+                                  Fill="{StaticResource ForegroundColor}"
+                                  />
+                            <TextBlock Grid.Column="1" Text="Детали" Classes="ONE-Pararaph-Bold" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                        <Button Content="Ok" Classes="Primary Medium" Click="OkButton_Click">
+                        </Button>
+                        <Button Content="Отмена" Classes="Secondary Medium" Click="CancelButton_Click" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</mx:MxWindow>
