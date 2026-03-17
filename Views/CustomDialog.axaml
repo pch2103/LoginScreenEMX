@@ -1,8 +1,8 @@
 <mx:MxWindow xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mx="https://schemas.eremexcontrols.net/avalonia"
-             xmlns:views="clr-namespace:LoginScreenEMX.Views"
              x:Class="LoginScreenEMX.Views.CustomDialog"
+             xmlns:mxe="https://schemas.eremexcontrols.net/avalonia/editors"
              SizeToContent="WidthAndHeight"
              Classes="no-titlebar"
              CanResize="False"
@@ -12,20 +12,19 @@
              TransparencyLevelHint="Transparent">
 
     <Border Background="{DynamicResource BackgroundColor-800}"
-            MaxWidth="480"
+            MinWidth="320"
             BorderThickness="1"
             BorderBrush="{DynamicResource BackgroundColor-600}"
-            CornerRadius="{StaticResource LargeCornerRadius}"
-            Margin=" 0 8 0 0 "
-            Padding="8 4 8 8 "
+            CornerRadius="{StaticResource DefaultCornerRadius}"
+            Margin="0 24 0 0"
+            Padding="8 4 8 8"
             BoxShadow="0 4 20 0 #40000000">
-        <Grid RowDefinitions="Auto, *,Auto,Auto">
-            <!-- 1. Заголовок-->
+        <Grid RowDefinitions="Auto,*,Auto,Auto">
+            <!-- 1. Заголовок -->
             <Border Grid.Row="0"
-                    Margin="{StaticResource ThemePaddingDown-Medium}"
+                    Margin="{StaticResource ThemePaddingDown-Half}"
                     Height="{StaticResource ThemeSize-Large}">
-                <Grid ColumnDefinitions="Auto, *,Auto" VerticalAlignment="Center">
-                    <!-- Область для перетаскивания -->
+                <Grid ColumnDefinitions="Auto,*,Auto" VerticalAlignment="Center">
                     <Border Grid.Column="0" Background="Transparent" Margin="0 0 6 0"
                             VerticalAlignment="Center">
                         <Path Data="{StaticResource ErrorIcon}"
@@ -40,7 +39,6 @@
                                    VerticalAlignment="Center"
                                    Classes="ONE-Pararaph-Bold" />
                     </Border>
-                    <!-- Кнопки управления окном -->
                     <StackPanel Grid.Column="2" Orientation="Horizontal">
                         <Button Classes="Subtle IconOnlyMedium" Click="CancelButton_Click"
                                 VerticalAlignment="Center">
@@ -55,22 +53,20 @@
                 </Grid>
             </Border>
 
-            <!-- 3. Контент -->
-            <Border Grid.Row="1" Margin="{StaticResource ThemePaddingDown-Medium}">
+            <!-- 2. Контент -->
+            <Border Grid.Row="1" Margin="{StaticResource ThemePaddingDown-Half}">
                 <Grid>
-                    <!-- Фон для блока контента -->
                     <Border Classes="content-background" />
-                    <!-- Функционал -->
                     <Grid ColumnDefinitions="Auto *" Margin="{StaticResource ThemePadding-Medium}">
                         <Grid Grid.Column="0" VerticalAlignment="Top">
                             <Path Data="{StaticResource ErrorIcon}"
-                                  Width="{StaticResource ThemeSize-Large}"
-                                  Height="{StaticResource ThemeSize-Large}"
+                                  Width="{StaticResource ThemeSize-Double}"
+                                  Height="{StaticResource ThemeSize-Double}"
                                   Stretch="Uniform"
                                   Stroke="Transparent"
                                   Fill="{StaticResource RedColor}" />
                         </Grid>
-                        <Grid Grid.Column="1" Margin="12 0 0 0 " RowDefinitions="Auto Auto Auto Auto"
+                        <Grid Grid.Column="1" Margin="12 0 0 0" RowDefinitions="Auto,Auto"
                               VerticalAlignment="Top">
                             <TextBlock Text="Нарушена целостность системы.&#x0a;Детали:"
                                        Foreground="{StaticResource RedColor}"
@@ -87,30 +83,57 @@
                                 <Run Text="Статус сервера LOAD002:" FontWeight="Bold"/>
                                 <Run Text=" проверен"/>
                             </TextBlock>
-                            
                         </Grid>
                     </Grid>
                 </Grid>
             </Border>
-            <!-- 5. Нижние кнопки -->
-            <Border Grid.Row="2">
-                <Grid ColumnDefinitions="* Auto">
-                    <Button Classes="Primary Medium" Click="OkButton_Click">
-                        <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
-                            <Path Data="{StaticResource ListViewIcon}"
-                                  VerticalAlignment="Center"
+            <!-- 3. Раскрывающаяся панель с деталями -->
+            <Border Grid.Row="2" 
+                    x:Name="DetailsPanel"
+                    IsVisible="False"
+                    Background="{DynamicResource BackgroundColor-40}"
+                    Margin="{StaticResource ThemePaddingDown-Regular}">
+                <Grid>
+                    
+                    <Grid Margin="6 6 0 6">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                      HorizontalScrollBarVisibility="Disabled"
+                                      MaxHeight="120">
+                            <mxe:TextEditor x:Name="DetailsTextBox"
+                                            Classes="Medium"
+                                            AcceptsReturn="True"
+                                            TextWrapping="Wrap"
+                                            ReadOnly="True"
+                                            MinHeight="60"
+                                            BorderThickness="0"
+                                            Background="Transparent"/>
+                        </ScrollViewer>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <!-- 4. Нижние кнопки -->
+            <Border Grid.Row="3">
+                <Grid ColumnDefinitions="*,Auto">
+                    <Button x:Name="DetailsButton"
+                            Classes="Secondary Medium" 
+                            Click="DetailsButton_Click">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Spacing="8">
+                            <Path x:Name="DetailsIcon"
+                                  Data="{StaticResource ChevronIcon}"
+                                  Margin="0, 6, 0, 0"
                                   Stretch="Uniform"
-                                  Width="{StaticResource ThemeSize-Subs}"
-                                  Height="{StaticResource ThemeSize-Subs}"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"
+                                  Width="{StaticResource ThemeSize-Regular}"
+                                  Height="{StaticResource ThemeSize-Regular}"
                                   Stroke="Transparent"
-                                  Fill="{StaticResource ForegroundColor}"
-                                  />
-                            <TextBlock Grid.Column="1" Text="Детали" Classes="ONE-Pararaph-Bold" VerticalAlignment="Center" />
+                                  Fill="{StaticResource ForegroundColor}"/>
+                            <TextBlock Text="Детали" Classes="ONE-Pararaph-Bold" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>
                     <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
-                        <Button Content="Ok" Classes="Primary Medium" Click="OkButton_Click">
-                        </Button>
+                        <Button Content="Ok" Classes="Primary Medium" Click="OkButton_Click"/>
                         <Button Content="Отмена" Classes="Secondary Medium" Click="CancelButton_Click" />
                     </StackPanel>
                 </Grid>

@@ -41,6 +41,7 @@
         <x:Double x:Key="ThemeSize-Medium">16</x:Double>
         <x:Double x:Key="ThemeSize-Double">24</x:Double>
         <x:Double x:Key="ThemeSize-Large">32</x:Double>
+        <Thickness x:Key="ThemePadding-Half">6,6,6,6</Thickness>
         <Thickness x:Key="ThemePadding-Regular">12,12,12,12</Thickness>
         <Thickness x:Key="ThemePadding-Medium">16,16,16,16</Thickness>
         <Thickness x:Key="ThemePadding-Double">32,32,32,32</Thickness>
@@ -48,8 +49,8 @@
         <Thickness x:Key="ThemePaddingDown-Regular">0,0,0,12</Thickness>
         <Thickness x:Key="ThemePaddingDown-Medium">0,0,0,16</Thickness>
         
-        <CornerRadius x:Key="DefaultCornerRadius">2</CornerRadius>
-        <CornerRadius x:Key="LargeCornerRadius">4</CornerRadius>
+        <CornerRadius x:Key="DefaultCornerRadius">4</CornerRadius>
+        <CornerRadius x:Key="LargeCornerRadius">6</CornerRadius>
         
         
         <!-- Основные цвета -->
